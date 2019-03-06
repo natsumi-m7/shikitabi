@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  spot_image_id: MyText
+  spot_name: MyString
+  description: MyText
+  season: 1
+  prefecture: 1
+  spot_address: MyText
+
+two:
+  spot_image_id: MyText
+  spot_name: MyString
+  description: MyText
+  season: 1
+  prefecture: 1
+  spot_address: MyText

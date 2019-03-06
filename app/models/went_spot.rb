@@ -1,0 +1,2 @@
+class WentSpot < ApplicationRecord
+end
