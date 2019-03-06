@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Spot image:</strong>
+  <%= @spot.spot_image_id %>
+</p>
+
+<p>
+  <strong>Spot name:</strong>
+  <%= @spot.spot_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @spot.description %>
+</p>
+
+<p>
+  <strong>Season:</strong>
+  <%= @spot.season %>
+</p>
+
+<p>
+  <strong>Prefecture:</strong>
+  <%= @spot.prefecture %>
+</p>
+
+<p>
+  <strong>Spot address:</strong>
+  <%= @spot.spot_address %>
+</p>
+
+<%= link_to 'Edit', edit_spot_path(@spot) %> |
+<%= link_to 'Back', spots_path %>
