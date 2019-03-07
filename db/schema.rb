@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_06_163509) do
+ActiveRecord::Schema.define(version: 2019_03_07_063524) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
@@ -27,11 +27,17 @@ ActiveRecord::Schema.define(version: 2019_03_06_163509) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "seasons", force: :cascade do |t|
+    t.integer "season_name", limit: 1, default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "spots", force: :cascade do |t|
     t.text "spot_image_id"
     t.string "spot_name", null: false
     t.text "description", null: false
-    t.integer "season", limit: 1, default: 0
+    t.integer "season_id", limit: 1, default: 0
     t.integer "prefecture", limit: 1, default: 0
     t.text "spot_address"
     t.datetime "created_at", null: false
