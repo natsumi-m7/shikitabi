@@ -1,3 +1,8 @@
+.header_container{
+  width: 100%;
+  height: 160px;
+  background-color:yellow;
+}
 @charset "UTF-8";
 
 * {
@@ -28,6 +33,8 @@ h1{
   right: 20px;
   top: 20px;
   z-index: 10;
+  padding-top:30px;
+  margin-right: 20px;
 }
 
 .menu-trigger,

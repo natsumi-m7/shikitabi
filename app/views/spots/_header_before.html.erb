@@ -1,24 +1,27 @@
 <div class="header_container">
 	<div class ="header_logo">
+    <%= image_tag '/images/header_logo2.jpg'%>
+
 	</div>
-<div id="sp-menu">
+  <div id="sp-menu">
       <h1>MENU</h1>
       <ul>
-        <li></li>
-        <li><a href="#">MENU2</a></li>
-        <li><a href="#">MENU3</a></li>
-        <li><a href="#">MENU4</a></li>
-        <li><a href="#">MENU5</a></li>
+        <li><%= link_to "春",season_path(1) %></li>
+        <li><%= link_to "夏",season_path(2) %></li>
+        <li><%= link_to "秋",season_path(3) %></li>
+        <li><%= link_to "冬",season_path(4) %></li>
+        <li><%= link_to "マイページ",user_path(current_user) %></li>
+        <li><%= link_to "ログアウト",destroy_user_session_path,method: :delete %></li>
       </ul>
-    </div>
-    <div id="hm-icon">
+  </div>
+  <div id="hm-icon">
       <a class="menu-trigger" href="#">
         <span></span>
         <span></span>
         <span></span>
       </a>
-    </div>
+  </div>
+</div>
 
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
-</div>
