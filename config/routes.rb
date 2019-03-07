@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root 'spots#top'
+  devise_for :users
+  get '/', to: 'spots#top'
   get 'favorites/create'
   get 'favorites/destroy'
   get 'went_spots/create'
@@ -13,6 +16,6 @@ Rails.application.routes.draw do
   get 'users/update'
   get 'users/destroy'
   resources :spots
-  devise_for :users
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
