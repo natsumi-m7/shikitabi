@@ -1,0 +1,8 @@
+ja:
+  enums:
+    season:
+      status:
+        aspring: 春
+        summer: 夏
+        autumn: 秋
+        winter: 冬

@@ -1,0 +1,38 @@
+<div class="header_container">
+	<div class ="header_logo">
+    <%= link_to root_path, target: "_blank" do %>
+        <%= image_tag '/images/header_logo2.jpg'%>
+    <% end %>
+
+	</div>
+  <div id="sp-menu">
+    <h1>MENU</h1>
+    <% if user_signed_in?%>
+      <ul>
+        <li><%= link_to "春",season_path(1) %></li>
+        <li><%= link_to "夏",season_path(2) %></li>
+        <li><%= link_to "秋",season_path(3) %></li>
+        <li><%= link_to "冬",season_path(4) %></li>
+        <li><%= link_to "マイページ",user_path(current_user) %></li>
+        <li><%= link_to "ログアウト",destroy_user_session_path,method: :delete %></li>
+      </ul>
+      <% else %>
+      <ul>
+        <li><%= link_to "春",season_path(1) %></li>
+        <li><%= link_to "夏",season_path(2) %></li>
+        <li><%= link_to "秋",season_path(3) %></li>
+        <li><%= link_to "冬",season_path(4) %></li>
+      </ul>
+    <% end %>
+  </div>
+  <div id="hm-icon">
+      <a class="menu-trigger" href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+  </div>
+</div>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
