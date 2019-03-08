@@ -34,7 +34,7 @@ class SpotsController < ApplicationController
     @spot = Spot.new(spot_params)
 
     if @spot.save
-      redirect_to @spot, notice: 'Spot was successfully created.'
+      redirect_to root_path, notice: 'Spot was successfully created.'
     else
       render :new
     end
