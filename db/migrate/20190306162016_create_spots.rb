@@ -4,7 +4,7 @@ class CreateSpots < ActiveRecord::Migration[5.2]
       t.text :spot_image_id
       t.string :spot_name, null: false
       t.text :description, null: false
-      t.integer :season_id, limit: 1, default: 0
+      t.integer :season, limit: 1, default: 0
       t.integer :prefecture, limit: 1, default: 0
       t.text :spot_address
 
