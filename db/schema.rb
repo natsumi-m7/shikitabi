@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2019_03_08_014727) do
   end
 
   create_table "spots", force: :cascade do |t|
-    t.text "spot_image_id"
+    t.string "images"
     t.string "spot_name", null: false
     t.text "description", null: false
     t.integer "season", limit: 1, default: 0
