@@ -1,7 +1,7 @@
 class SeasonsController < ApplicationController
   def spring
-  	@spots = Spot.all
-  	@spot = Spot.find(6)
+  	@spots = Spot.where(season: "春")
+
   end
 
   def summer

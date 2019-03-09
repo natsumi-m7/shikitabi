@@ -5,14 +5,6 @@
 	<% @spots.each do |spot| %>
 		<h1><%= spot.season %></h1>
 		<%= spot.spot_name %>
-		<% if spot.images.attached? %>
-			<% spot.images.each do |image| %>
-          		<%= image_tag image %>
-          	<% end %>
-        <% end %>
+		<%= link_to image_tag((spot.images.url), :size =>'100x100'),spot_path(spot.id) %>
 	<% end %>
 </div>
-あああ
-<% if @spot.images.attached? %>
- <%= image_tag @spot.images %>
-<% end %>
