@@ -1,6 +1,6 @@
 <h1>New Spot</h1>
 
-<%= form_for @spot do |f| %>
+<%= form_with model:@spot, local: true do |f| %>
 	<%= f.label :spot_name, "スポット名", class:"label-bold" %><br>
 	<%= f.text_field :spot_name ,class:"form-control form-ucr"%>
 

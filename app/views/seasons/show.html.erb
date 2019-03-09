@@ -1,1 +1,10 @@
 <%= render 'spots/header' %>
+ああああ
+
+<div class="spots">
+	<%= @spots.each do |spot| %>
+		<%= spot.season %>
+		<%= spot.spot_name %>
+	<% end %>
+</div>
+ああああ

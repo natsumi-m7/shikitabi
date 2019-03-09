@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   # post 'spots#create'
-  get 'seasons/show'
+  get 'seasons/spring'
   root 'spots#top'
   get '/', to: 'spots#top'
   get '/spots/new', to: 'spots#new'
