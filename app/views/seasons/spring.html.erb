@@ -1,0 +1,10 @@
+<%= render 'spots/header' %>
+
+
+<div class="spots">
+	<% @spots.each do |spot| %>
+		<h1><%= spot.season %></h1>
+		<%= spot.spot_name %>
+		<%= link_to image_tag((spot.images.url), :size =>'100x100'),spot_path(spot.id) %>
+	<% end %>
+</div>

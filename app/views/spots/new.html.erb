@@ -1,6 +1,6 @@
 <h1>New Spot</h1>
 
-<%= form_for @spot do |f| %>
+<%= form_with model:@spot, local: true do |f| %>
 	<%= f.label :spot_name, "スポット名", class:"label-bold" %><br>
 	<%= f.text_field :spot_name ,class:"form-control form-ucr"%>
 
@@ -18,7 +18,7 @@
 	<%= f.select :prefecture, Spot.prefectures.keys, { prompt: '選択してください' } %>
 
 	<%= f.label :images, "画像", class:"label-bold" %><br>
-	<%= f.file_field :images, multiple: true %>
+	<%= f.file_field :images, multipart: true %>
 
 	<%= f.submit '新規追加' %>
 

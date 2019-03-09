@@ -1,4 +1,4 @@
-<div class="header_container">
+<div class="header_container clearfix">
 	<div class ="header_logo">
     <%= link_to root_path, target: "_blank" do %>
         <%= image_tag '/images/header_logo2.jpg'%>
@@ -9,19 +9,19 @@
     <h1>MENU</h1>
     <% if user_signed_in?%>
       <ul>
-        <li><%= link_to "春",season_path(1) %></li>
-        <li><%= link_to "夏",season_path(2) %></li>
-        <li><%= link_to "秋",season_path(3) %></li>
-        <li><%= link_to "冬",season_path(4) %></li>
+        <li><%= link_to "春",seasons_spring_path %></li>
+        <li><%= link_to "夏",seasons_summer_path %></li>
+        <li><%= link_to "秋",seasons_autumn_path %></li>
+        <li><%= link_to "冬",seasons_winter_path %></li>
         <li><%= link_to "マイページ",user_path(current_user) %></li>
         <li><%= link_to "ログアウト",destroy_user_session_path,method: :delete %></li>
       </ul>
       <% else %>
       <ul>
-        <li><%= link_to "春",season_path(1) %></li>
-        <li><%= link_to "夏",season_path(2) %></li>
-        <li><%= link_to "秋",season_path(3) %></li>
-        <li><%= link_to "冬",season_path(4) %></li>
+        <li><%= link_to "春",seasons_spring_path %></li>
+        <li><%= link_to "夏",seasons_summer_path %></li>
+        <li><%= link_to "秋",seasons_autumn_path %></li>
+        <li><%= link_to "冬",seasons_winter_path %></li>
       </ul>
     <% end %>
   </div>

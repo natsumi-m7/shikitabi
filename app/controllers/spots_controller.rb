@@ -34,7 +34,7 @@ class SpotsController < ApplicationController
     @spot = Spot.new(spot_params)
 
     if @spot.save
-      redirect_to root_path, notice: 'Spot was successfully created.'
+      redirect_to spots_new_path, notice: 'Spot was successfully created.'
     else
       render :new
     end
@@ -63,6 +63,6 @@ class SpotsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def spot_params
-      params.require(:spot).permit(:spot_image_id, :spot_name, :description, :season, :prefecture, :spot_address, :images)
+      params.require(:spot).permit(:images, :spot_name, :description, :season, :prefecture, :spot_address)
     end
 end
