@@ -1,3 +1,25 @@
 <%= render 'spots/header' %>
-<div class="show_container"></div>
-<h1>詳細ページ</h1>
+<div class="show_container">
+  <div class="spot_container">
+      <div class="spot_content">
+        <h1 class="spot_name"><%= @spot.spot_name %></h1>
+        <div class="description">
+          <h3><%= @spot.description %></h3>
+        </div>
+      </div>
+      <div class="spot_images">
+        <%= image_tag @spot.images.url, class: "spot_image"%>
+      </div>
+  </div>
+
+  <div class="show_container_bottom">
+    .
+    <div class="review">
+      
+    </div>
+    <div class="comment">
+      
+    </div>
+  </div>
+</div>
+
