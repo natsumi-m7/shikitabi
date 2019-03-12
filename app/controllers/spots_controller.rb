@@ -8,16 +8,8 @@ class SpotsController < ApplicationController
 
   end
 
-  def season
-
-  end
-  # GET /spots
-  def index
-    @spots = Spot.all
-  end
-
-  # GET /spots/1
   def show
+    @spot = Spot.find(params[:id])
   end
 
   # GET /spots/new

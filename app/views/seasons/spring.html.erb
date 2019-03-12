@@ -1,10 +1,37 @@
 <%= render 'spots/header' %>
 
+<div class ="season_container">
+	<div class="image_container">
+	<!-- 季節ページのメイン画像 -->
+		<div class="season_image">
+		<!-- 季節ロゴ -->
+			<div class="season_image_container">
+				<h1>春</h1>
+			</div>
+		</div>
+		<div class="spring_image">
+		<!-- その季節の代表的な写真 -->
+		</div>
+	</div>
 
-<div class="spots">
-	<% @spots.each do |spot| %>
-		<h1><%= spot.season %></h1>
-		<%= spot.spot_name %>
-		<%= link_to image_tag((spot.images.url), :size =>'100x100'),spot_path(spot.id) %>
-	<% end %>
+	<div class="spots_select">
+		<h3>春の名所</h3>
+		<P>ああああああああああああああああああああああああ<br>
+			ああああああああああああああああああああ<br>
+			あああああああああああああああああああああ<br>
+			ああああああああああああああああああああああ<br>
+			ああああああああああああああああああ
+		</P>
+	</div>
+	<div class="spots">
+	<!-- メインビジュアルの下。季節のスポットたち -->
+		<div class="spots_content">
+			<% @spots.each do |spot| %>
+				<div class="spot">
+					<%= link_to image_tag((spot.images.url), :size =>'300x300'),spot_path(spot.id) %>
+					<h3><%= spot.spot_name %></h3>
+				</div>
+			<% end %>
+		</div>
+	</div>
 </div>

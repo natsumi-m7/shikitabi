@@ -1,9 +1,62 @@
 // Place all the styles related to the seasons controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.spots{
-	// margin-top:100px;
+.season_container{
 	width:100%;
-	background-color:yellow;
+}
+.image_container{
+	width:100%;
+	display: flex;
+}
+.season_image{
+	width:30%;
+	height:600px;
+	float:left;
+	background-image: url(/images/sakura.png);
+	background-size:cover;
+}
+.season_image_container{
+	width:60%;
 	height:300px;
+	margin:0 auto;
+	background-color:rgba(255, 255, 255, 0.7);
+	border-radius: 50%;
+	margin-top:30%;
+}
+.season_image_container h1{
+	text-align: center;
+	line-height: 300px;
+	font-size:70px;
+	color:rgba(20, 20, 20, 0.5);
+}
+.spring_image{
+	width:69%;
+	height:600px;
+	float:left;
+	background-image: url(/images/spring_1.jpg);
+}
+.spots_select{
+	width:80%;
+	height:260px;
+	margin:0 auto;
+	background-color:#EEEEEE;
+	text-align:center;
+}
+.spots_content{
+	width:90%;
+	height:1000px;
+	margin-top:50px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: space-between;
+	background-color:#FFE4E1;
+	margin: 0 auto;
+	padding:20px;
+	border-radius:20px;
+}
+.spot{
+	width:23%;
+	height:200px;
 }
