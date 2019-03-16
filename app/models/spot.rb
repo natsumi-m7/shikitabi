@@ -2,8 +2,11 @@ class Spot < ApplicationRecord
 	has_many :favorites,dependent: :destroy
 	has_many :comments,dependent: :destroy
 	has_many :went_spots,dependent: :destroy
+    # carrierWaveを使う為の記述
 	mount_uploader :images, ImagesUploader
-    # belongs_to :season
+    # geocorderでアドレスから緯度経度を取得する為の記述
+    geocoded_by :spot_address
+    after_validation :geocode
 
     	enum season: {
         '春':1,

@@ -13,8 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+
 .clearfix::after {
   content: "";
   display: block;
   clear: both;
 }
+/*body{*/
+  /*font-family:'HimeminShirayuki-mini';*/
+/*}*/
