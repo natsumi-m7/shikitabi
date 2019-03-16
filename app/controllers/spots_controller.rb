@@ -1,5 +1,4 @@
 class SpotsController < ApplicationController
-  before_action :set_spot, only: [:show, :edit, :update, :destroy]
   def top
 
   end
@@ -10,6 +9,7 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
+    @comment = Comment.new
   end
 
   # GET /spots/new
@@ -49,12 +49,9 @@ class SpotsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_spot
-      @spot = Spot.find(params[:id])
-    end
 
     # Only allow a trusted parameter "white list" through.
     def spot_params
-      params.require(:spot).permit(:images, :spot_name, :description, :season, :prefecture, :spot_address)
+      params.require(:spot).permit(:images, :spot_name, :description, :season, :prefecture, :spot_address, :latitude, :longitude)
     end
 end

@@ -1,5 +1,5 @@
 <%= render 'spots/header' %>
-<div class="show_container">
+<div class="show">
   <div class="spot_container">
       <div class="spot_content">
         <h1 class="spot_name"><%= @spot.spot_name %></h1>
@@ -12,14 +12,41 @@
       </div>
   </div>
 
-  <div class="show_container_bottom">
-    .
-    <div class="review">
-      
+  <div class="show_bottom">
+    <div class="show_bottom_left">
+
+      <div class="review">
+              <%= form_for [@spot,@comment] do |comment| %>
+              <label><%= comment.label :comment %></label>
+              <%= comment.text_area :comment, :size => "43x10" %><br>
+              <div class="review-btn">
+                <button type="submit">投稿
+                </button>
+              </div>
+              <% end %><!-- form_forの閉じタグ -->
+      </div>
+
     </div>
-    <div class="comment">
-      
+    <div class="show_bottom_right">
+      <!-- ここからGoogleMapの記述 -->
+      <div id="map" style='width: 110%; height: 500px;'></div>
+      <script type="text/javascript">
+        handler = Gmaps.build('Google');
+        handler.buildMap({ provider: { scrollwheel: false }, internal: {id: 'map'}}, function(){
+          markers = handler.addMarkers([
+            {
+              "lat": <%= @spot.latitude %>,
+              "lng": <%= @spot.longitude %>,
+          "infowindow": '<p><%= @spot.spot_name %></p><p><%= @spot.spot_address %></p><p><%= link_to "Googleマップで見る" ,"https://maps.google.co.jp/maps?q=loc:#{@spot.latitude},#{@spot.longitude}&iwloc=J",target: "_blank" %></p>'
+            }
+          ]);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+          handler.getMap().setZoom(17);
+        });
+      </script>
+
+
     </div>
   </div>
 </div>
-
