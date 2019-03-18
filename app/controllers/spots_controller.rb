@@ -10,6 +10,7 @@ class SpotsController < ApplicationController
   def show
     @spot = Spot.find(params[:id])
     @comment = Comment.new
+    @comments = @spot.comments.all
   end
 
   # GET /spots/new
@@ -52,6 +53,6 @@ class SpotsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def spot_params
-      params.require(:spot).permit(:images, :spot_name, :description, :season, :prefecture, :spot_address, :latitude, :longitude)
+      params.require(:spot).permit(:images, :spot_name, :description, :season, :prefecture, :spot_address, :latitude, :longitude, :average_star)
     end
 end
