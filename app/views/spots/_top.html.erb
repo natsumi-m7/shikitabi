@@ -1,5 +1,38 @@
+<div class="container">
+	<!-- サイトのトップイメージ -->
+	<div class="top_image">
+		<div class="tp top_image1"></div>
+		<div class="tp top_image2"></div>
+		<div class="tp top_image3"></div>
+		<div class="tp top_image4"></div>
+	</div>
+	<!-- サイトの説明部分 -->
+	<div class="about_site">
+		<div class="site_logo">
+		</div>
+		<div class="site_discription">
+			<h3 class="site_discription_title">四季たびとは</h3>
+			<P>関東の観光名所を四季ごとにご紹介するサイトです。<br>
+			ご覧いただく時期に合わせて見所をご紹介致します。<br>
+			会員登録して頂くと、レビューの投稿やお気に入り登録、<br>またユーザーのフォロー機能等がご使用いただけます。<br>
+			会員登録は一切料金は発生致しません。<br>
+		    登録される方は右の会員登録フォームよりご登録ください。</P>
+		</div>
+		<div class="sign_up">
 
-<div class="tp top_image1"></div>
-<div class="tp top_image2"></div>
-<div class="tp top_image3"></div>
-<div class="tp top_image4"></div>
+		</div>
+	</div>
+	<div class="spot_index">
+	<% @spots.each do |spot| %>
+
+			<div class="spot_item">
+				<div class="spot_top">
+		        	<%= image_tag spot.images.url, class: "spot_top_image"%>
+				</div>
+				<div class="spot_bottom">
+					<%= spot.spot_name %>
+				</div>
+			</div>
+	<% end %>
+	</div>
+</div>

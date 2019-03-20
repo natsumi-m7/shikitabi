@@ -1,1 +1,27 @@
 <%= render 'spots/header' %>
+
+<div class="user_info">
+	<%= @user.lastname %>
+	<%= @user.firstname %>
+	<%= @user.lastname_kana %>
+	<%= @user.firstname_kana %>
+	<%= image_tag @user.user_image.url%>
+
+
+</div>
+<div class="follow">
+
+    <!-- 追加 -->
+<p><%=link_to "フォロー", follows_user_path(@user.id) %></p>
+<p><%=link_to "フォロワー", followers_user_path(@user.id) %></p>
+<% if current_user != @user %>
+    <% if @user.followed_by?(current_user) %>
+        <p><%=link_to "フォロー済み", user_relations_path(@user.id), method: :delete %></p>
+    <% else %>
+        <p><%=link_to "フォローする", user_relations_path(@user.id), method: :post %></p>
+    <% end %>
+<% end %>
+<!--ここまで -->
+
+</div>
+<div class="favorite_spot"></div>
