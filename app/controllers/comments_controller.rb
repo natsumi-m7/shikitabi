@@ -8,13 +8,8 @@ class CommentsController < ApplicationController
     spot = Spot.find(params[:spot_id])
   	comment = current_user.comments.new(comment_params)
   	comment.spot_id = spot.id
+    # 以下コメントがセーブされた際にspotのaverage_starも保存される記述
   	if comment.save
-        # puts "--------------"
-        # puts spot.comments.sum(:star)
-        # puts "--------------"
-        puts "--------------"
-        puts spot.average_star
-        puts "--------------"
         spot.average_star = spot.comments.sum(:star).to_f / spot.comments.count
         spot.save
     end

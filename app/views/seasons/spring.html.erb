@@ -1,37 +1,71 @@
-<%= render 'spots/header' %>
+
 
 <div class ="season_container">
-	<div class="image_container">
-	<!-- 季節ページのメイン画像 -->
-		<div class="season_image">
-		<!-- 季節ロゴ -->
-			<div class="season_image_container">
-				<h1>春</h1>
+	<div class="season_top">
+	</div>
+	<div class="season_bottom">
+	<!-- メインビジュアルの下。季節のスポットたち -->
+		<div class="region">
+			<h3>地域選択</h3>
+			<div class="kantou">
+				<%= image_tag "/images/kantou2.jpg", :size=> "450x400",class: "map" %>
+				<!-- 検索 -->
+				<%= search_form_for @search, url: seasons_spring_path do |f| %>
+					<div class="form-group">
+						<%= f.hidden_field :prefecture_eq, :value => 1 %>
+						<%=f.submit "東京", class: "tokyo" %>
+					</div>
+				<% end %>
+				<%= search_form_for @search, url: seasons_spring_path do |f| %>
+					<div class="form-group">
+						<%= f.hidden_field :prefecture_eq, :value => 2 %>
+						<%=f.submit "神奈川", class: "kanagawa" %>
+					</div>
+				<% end %>
+				<%= search_form_for @search, url: seasons_spring_path do |f| %>
+					<div class="form-group">
+						<%= f.hidden_field :prefecture_eq, :value => 3 %>
+						<%=f.submit "埼玉", class: "saitama" %>
+					</div>
+				<% end %>
+				<%= search_form_for @search, url: seasons_spring_path do |f| %>
+					<div class="form-group">
+						<%= f.hidden_field :prefecture_eq, :value => 4 %>
+						<%=f.submit "千葉", class: "chiba" %>
+					</div>
+				<% end %>
+				<%= search_form_for @search, url: seasons_spring_path do |f| %>
+					<div class="form-group">
+						<%= f.hidden_field :prefecture_eq, :value => 5 %>
+						<%=f.submit "群馬", class: "gunma" %>
+					</div>
+				<% end %>
+				<%= search_form_for @search, url: seasons_spring_path do |f| %>
+					<div class="form-group">
+						<%= f.hidden_field :prefecture_eq, :value => 6 %>
+						<%=f.submit "栃木", class: "tochigi" %>
+					</div>
+				<% end %>
+				<%= search_form_for @search, url: seasons_spring_path do |f| %>
+					<div class="form-group">
+						<%= f.hidden_field :prefecture_eq, :value => 7 %>
+						<%=f.submit "茨城", class: "ibaraki" %>
+					</div>
+				<% end %>
 			</div>
 		</div>
-		<div class="spring_image">
-		<!-- その季節の代表的な写真 -->
-		</div>
-	</div>
+	<div class="spot_index">
+	<% @spots.each do |spot| %>
 
-	<div class="spots_select">
-		<h3>春の名所</h3>
-		<P>ああああああああああああああああああああああああ<br>
-			ああああああああああああああああああああ<br>
-			あああああああああああああああああああああ<br>
-			ああああああああああああああああああああああ<br>
-			ああああああああああああああああああ
-		</P>
-	</div>
-	<div class="spots">
-	<!-- メインビジュアルの下。季節のスポットたち -->
-		<div class="spots_content">
-			<% @spots.each do |spot| %>
-				<div class="spot">
-					<%= link_to image_tag((spot.images.url), :size =>'300x300'),spot_path(spot.id) %>
-					<h3><%= spot.spot_name %></h3>
+			<div class="spot_item">
+				<div class="spot_top">
+		        	<%= image_tag spot.images.url, class: "spot_top_image"%>
 				</div>
-			<% end %>
-		</div>
+				<div class="spot_bottom">
+					<%= spot.spot_name %>
+				</div>
+			</div>
+	<% end %>
+	</div>
 	</div>
 </div>

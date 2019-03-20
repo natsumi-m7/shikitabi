@@ -8,6 +8,7 @@ class Spot < ApplicationRecord
     geocoded_by :spot_address
     after_validation :geocode
 
+        # DBには数値が保存されていて、表示される時だけ対応した文字列になる。
     	enum season: {
         '春':1,
         '夏':2,
@@ -19,5 +20,8 @@ class Spot < ApplicationRecord
         '神奈川':2,
         '埼玉':3,
         '千葉':4,
+        '群馬':5,
+        '栃木':6,
+        '茨城':7,
     }
 end

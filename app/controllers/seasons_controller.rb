@@ -1,7 +1,11 @@
 class SeasonsController < ApplicationController
   def spring
-  	@spots = Spot.where(season: "春")
+  	@search = Spot.ransack(params[:q])
+  	@spots = @search.result
+  	# .where(season: "春")
 
+    # @q = Spot.where(season: "春").ransack(params[:q])
+    # @spots = @q.result(distinct: true)
   end
 
   def summer
@@ -16,4 +20,6 @@ class SeasonsController < ApplicationController
   def winter
 
   end
+
+
 end

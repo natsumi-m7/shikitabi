@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   # post 'spots#create'
   get 'seasons/spring'
@@ -9,7 +10,12 @@ Rails.application.routes.draw do
   get '/', to: 'spots#top'
   get '/spots/new', to: 'spots#new'
   post '/spots', to: 'spots#create'
-  resources :users
+  resources :users do
+    resource :relations,only:[:create,:destroy]
+    get :follows, on: :member
+    get :followers, on: :member
+  end
+  resources :relationships,only: [:create, :destroy]
   resources :spots,only:[:show] do
       resources :comments,only:[:create,:destroy]
       resource :favorites,only:[:create,:destroy]

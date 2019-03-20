@@ -3,60 +3,79 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .season_container{
 	width:100%;
+	background-image: url(/images/sakura_back.jpg);
+	height:3000px;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: right bottom;
+	background-size: cover;
 }
-.image_container{
+.season_top{
 	width:100%;
-	display: flex;
-}
-.season_image{
-	width:30%;
-	height:600px;
-	float:left;
-	background-image: url(/images/sakura.png);
-	background-size:cover;
-}
-.season_image_container{
-	width:60%;
-	height:300px;
-	margin:0 auto;
-	background-color:rgba(255, 255, 255, 0.7);
-	border-radius: 50%;
-	margin-top:30%;
-}
-.season_image_container h1{
-	text-align: center;
-	line-height: 300px;
-	font-size:70px;
-	color:rgba(20, 20, 20, 0.5);
-}
-.spring_image{
-	width:69%;
-	height:600px;
-	float:left;
-	background-image: url(/images/spring_1.jpg);
-}
-.spots_select{
-	width:80%;
-	height:260px;
-	margin:0 auto;
-	background-color:#EEEEEE;
-	text-align:center;
-}
-.spots_content{
-	width:90%;
 	height:1000px;
-	margin-top:50px;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-content: space-between;
-	background-color:#FFE4E1;
-	margin: 0 auto;
-	padding:20px;
-	border-radius:20px;
 }
-.spot{
-	width:23%;
-	height:200px;
+.season_bottom{
+	width:80%;
+	height:2000px;
+	margin:0 auto;
+	padding:30px 20px;
+	background-color: white;
+}
+.spot.content{
+	width:100%;
+}
+.region{
+    margin:30px auto;
+    text-align: center;
+}
+.kantou{
+	margin:30px auto;
+	width:35%;
+	height:500px;
+	position:relative;
+}
+.map{
+
+}
+.gunma{
+	padding:10px;
+	position:absolute;
+	top:85px;
+	left:90px;
+}
+.tokyo{
+	padding:10px;
+	position:absolute;
+	top:225px;
+	left:160px;
+}
+.kanagawa{
+	padding:10px;
+	position:absolute;
+	top:265px;
+	left:154px;
+}
+.chiba{
+	padding:10px;
+	position:absolute;
+	top:255px;
+	left:290px;
+}
+.saitama{
+	padding:10px;
+	position:absolute;
+	top:180px;
+	left:160px;
+}
+.ibaraki{
+	padding:10px;
+	position:absolute;
+	top:130px;
+	left:310px;
+}
+.tochigi{
+	padding:10px;
+	position:absolute;
+	top:80px;
+	left:220px;
 }
