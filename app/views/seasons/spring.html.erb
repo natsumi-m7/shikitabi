@@ -1,59 +1,75 @@
 
 
-<div class ="season_container">
+<div class ="season-container">
 	<div class="season_top">
 	</div>
 	<div class="season_bottom">
 	<!-- メインビジュアルの下。季節のスポットたち -->
+		<div class="region_title">
+			<h2>検索はこちらから</h2>
+			<%= image_tag "/images/line1.png",class: "line" %>
+		</div>
 		<div class="region">
-			<h3>地域選択</h3>
+			<div class="search">
+				<div class="search_discription">
+				<p>こちらから検索が出来ます。<br>
+				右側の地図内のボタンを押せば、地域ごとの検索が可能です。
+				スポット名で検索する場合は以下の検索フォームに入力してください。</p>
+				</div>
+				<%= search_form_for @search, url: seasons_spring_path do |f| %>
+					<div class="form-group">
+						<%= f.text_field :spot_name_cont,:size=>"40" %>
+						<%=f.submit "検索する",class: "btn btn-success" %>
+					</div>
+				<% end %>
+			</div>
 			<div class="kantou">
 				<%= image_tag "/images/kantou2.jpg", :size=> "450x400",class: "map" %>
 				<!-- 検索 -->
 				<%= search_form_for @search, url: seasons_spring_path do |f| %>
 					<div class="form-group">
 						<%= f.hidden_field :prefecture_eq, :value => 1 %>
-						<%=f.submit "東京", class: "tokyo" %>
+						<%=f.submit "東京", class: "btn btn-default tokyo" %>
 					</div>
 				<% end %>
 				<%= search_form_for @search, url: seasons_spring_path do |f| %>
 					<div class="form-group">
 						<%= f.hidden_field :prefecture_eq, :value => 2 %>
-						<%=f.submit "神奈川", class: "kanagawa" %>
+						<%=f.submit "神奈川", class: "btn btn-default kanagawa" %>
 					</div>
 				<% end %>
 				<%= search_form_for @search, url: seasons_spring_path do |f| %>
 					<div class="form-group">
 						<%= f.hidden_field :prefecture_eq, :value => 3 %>
-						<%=f.submit "埼玉", class: "saitama" %>
+						<%=f.submit "埼玉", class: "btn btn-default saitama" %>
 					</div>
 				<% end %>
 				<%= search_form_for @search, url: seasons_spring_path do |f| %>
 					<div class="form-group">
 						<%= f.hidden_field :prefecture_eq, :value => 4 %>
-						<%=f.submit "千葉", class: "chiba" %>
+						<%=f.submit "千葉", class: "btn btn-default chiba btn1" %>
 					</div>
 				<% end %>
 				<%= search_form_for @search, url: seasons_spring_path do |f| %>
 					<div class="form-group">
 						<%= f.hidden_field :prefecture_eq, :value => 5 %>
-						<%=f.submit "群馬", class: "gunma" %>
+						<%=f.submit "群馬", class: "btn btn-default gunma" %>
 					</div>
 				<% end %>
 				<%= search_form_for @search, url: seasons_spring_path do |f| %>
 					<div class="form-group">
 						<%= f.hidden_field :prefecture_eq, :value => 6 %>
-						<%=f.submit "栃木", class: "tochigi" %>
+						<%=f.submit "栃木", class: "btn btn-default tochigi" %>
 					</div>
 				<% end %>
 				<%= search_form_for @search, url: seasons_spring_path do |f| %>
 					<div class="form-group">
 						<%= f.hidden_field :prefecture_eq, :value => 7 %>
-						<%=f.submit "茨城", class: "ibaraki" %>
+						<%=f.submit "茨城", class: "btn btn-default ibaraki" %>
 					</div>
 				<% end %>
 			</div>
-		</div>
+	</div>
 	<div class="spot_index">
 	<% @spots.each do |spot| %>
 

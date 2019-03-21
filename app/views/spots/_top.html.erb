@@ -1,4 +1,4 @@
-<div class="container">
+<div class="top-container">
 	<!-- サイトのトップイメージ -->
 	<div class="top_image">
 		<div class="tp top_image1"></div>
@@ -8,8 +8,6 @@
 	</div>
 	<!-- サイトの説明部分 -->
 	<div class="about_site">
-		<div class="site_logo">
-		</div>
 		<div class="site_discription">
 			<h3 class="site_discription_title">四季たびとは</h3>
 			<P>関東の観光名所を四季ごとにご紹介するサイトです。<br>
@@ -18,21 +16,40 @@
 			会員登録は一切料金は発生致しません。<br>
 		    登録される方は右の会員登録フォームよりご登録ください。</P>
 		</div>
-		<div class="sign_up">
-
+	</div>
+	<div class="recommendation_title">
+		<h2>四季たびおすすめスポット</h2>
+	</div>
+	<div class="recommendation">
+		<div class="recommendation_image">
+			<%= image_tag @spot1.images.url, class: "recommendation_spot_image"%>
+		</div>
+		<div class="recommendation_content">
+			<h4 class="spot_title"><%= @spot1.spot_name %></h4>
+			<div class="spot_address">
+				<h5><%= @spot1.prefecture %></h5>
+				<h5><%= @spot1.spot_address %></h5>
+			</div>
+			<div class="recommend_text">
+				<P>北海道厚真町には、人を育て生かす文化を持つ町役場がある。30 代の役場職員に挑戦する機会を与えてきた。若い役場職員たちは、部署横断のプロジェクトを立ち上げるなど、次々と主体的な挑戦を始めている。そして、町役場の先輩たちは、その挑戦を支え見守ってきた。そんな人づくりの文化が、町役場から染み出して、町全体に広がろうとしている。地域おこし協力隊となった若者が自立していくために、役場職員が一人一人と丁寧に向き合い支えてきたのはその一例。このような動きを拡張・加速していくために、2016 年、厚真町ローカルベンチャースクールが始まる。</P>
+			</div>
+			<%= link_to "もっと見る", spot_path(@spot1.id),class: 'btn btn-default recommend_link'%>
 		</div>
 	</div>
-	<div class="spot_index">
-	<% @spots.each do |spot| %>
-
-			<div class="spot_item">
-				<div class="spot_top">
-		        	<%= image_tag spot.images.url, class: "spot_top_image"%>
-				</div>
-				<div class="spot_bottom">
-					<%= spot.spot_name %>
-				</div>
+	<div class="recommendation">
+		<div class="recommendation_content">
+			<h4 class="spot_title"><%= @spot2.spot_name %></h4>
+			<div class="spot_address">
+				<h5><%= @spot2.prefecture %></h5>
+				<h5><%= @spot2.spot_address %></h5>
 			</div>
-	<% end %>
+			<div class="recommend_text">
+				<P>北海道厚真町には、人を育て生かす文化を持つ町役場がある。30 代の役場職員に挑戦する機会を与えてきた。若い役場職員たちは、部署横断のプロジェクトを立ち上げるなど、次々と主体的な挑戦を始めている。そして、町役場の先輩たちは、その挑戦を支え見守ってきた。そんな人づくりの文化が、町役場から染み出して、町全体に広がろうとしている。地域おこし協力隊となった若者が自立していくために、役場職員が一人一人と丁寧に向き合い支えてきたのはその一例。このような動きを拡張・加速していくために、2016 年、厚真町ローカルベンチャースクールが始まる。</P>
+			</div>
+			<%= link_to "もっと見る", spot_path(@spot2.id),class: 'btn btn-default recommend_link'%>
+		</div>
+		<div class="recommendation_image">
+			<%= image_tag @spot2.images.url, class: "recommendation_spot_image"%>
+		</div>
 	</div>
 </div>

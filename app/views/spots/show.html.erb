@@ -1,16 +1,13 @@
 <%= render 'spots/header' %>
 <div class="show">
-  <div class="spot_container">
-      <div class="spot_content">
-        <h1 class="spot_name"><%= @spot.spot_name %></h1>
-        <div class="description">
-          <h3><%= @spot.description %></h3>
-        </div>
-      </div>
+    <div class="spot_images">
       <div class="spot_images">
         <%= image_tag @spot.images.url, class: "spot_image"%>
       </div>
-  </div>
+      <div class="show_spot_name">
+        <h3><% @spot.spot_name %></h3>
+      </div>
+    </div>
 
   <div class="show_bottom">
     <div class="show_bottom_left">

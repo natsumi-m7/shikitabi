@@ -1,7 +1,7 @@
 // Place all the styles related to the seasons controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.season_container{
+.season-container{
 	width:100%;
 	background-image: url(/images/sakura_back.jpg);
 	height:3000px;
@@ -21,61 +21,115 @@
 	padding:30px 20px;
 	background-color: white;
 }
-.spot.content{
-	width:100%;
+.region_title{
+	width:50%;
+	margin:0 auto;
+	text-align: center;
 }
 .region{
-    margin:30px auto;
+    width:100%;
+    height:400px;
     text-align: center;
+    display:flex;
+    padding:0 10px 0 60px;
 }
 .kantou{
-	margin:30px auto;
-	width:35%;
-	height:500px;
+	// margin:30px auto;
+	width:50%;
+	height:400px;
 	position:relative;
 }
-.map{
-
+.search{
+	padding-top:80px;
+	width:50%;
+	height:400px;
+	// background-color: red;
+}
+.search_discription{
+	width:60%;
+	margin: 20px auto;
+}
+.search_discription p{
+	font-size: 15px;
+	line-height: 240%;
+}
+.line{
+	width:500px;
+	height:60px;
 }
 .gunma{
 	padding:10px;
 	position:absolute;
 	top:85px;
-	left:90px;
+	left:160px;
 }
 .tokyo{
 	padding:10px;
 	position:absolute;
 	top:225px;
-	left:160px;
+	left:230px;
 }
 .kanagawa{
 	padding:10px;
 	position:absolute;
 	top:265px;
-	left:154px;
+	left:224px;
 }
 .chiba{
 	padding:10px;
 	position:absolute;
 	top:255px;
-	left:290px;
+	left:360px;
 }
 .saitama{
 	padding:10px;
 	position:absolute;
 	top:180px;
-	left:160px;
+	left:230px;
 }
 .ibaraki{
 	padding:10px;
 	position:absolute;
 	top:130px;
-	left:310px;
+	left:380px;
 }
 .tochigi{
 	padding:10px;
 	position:absolute;
 	top:80px;
-	left:220px;
+	left:290px;
+}
+.btn1{
+	width: 50px;
+	height:30px;
+	font-size:8px;
+	text-align: center;
+}
+.spot_index{
+  width:90%;
+  margin:20px auto;
+  padding:50px 0;
+  background-image:url(/images/koshi.jpg);
+  display:flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.spot_item{
+  width:30%;
+  margin-bottom: 50px;
+  border-radius:10px;
+  background-color: white;
+}
+.spot_top{
+  width:100%;
+  height:270px;
+  background-color:red;
+  border-radius:10px;
+}
+.spot_bottom{
+  width:100%;
+  height:50px;
+  background-color: white;
+  border-radius:10px;
+  padding:10px 15px;
 }
