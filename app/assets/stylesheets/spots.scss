@@ -9,7 +9,7 @@
 // ▼ヘッダーの記述▼
 .header_container{
   width: 100%;
-  height: 100px;
+  height: 80px;
   background-color:white;
   position: fixed;
   top: 0;
@@ -119,7 +119,7 @@
 
 // ▲ヘッダーの記述▲
 // ▼トップページの記述▼
-.container{
+.top-container{
   width:100%;
 }
 .top_image{
@@ -154,97 +154,129 @@
 }
 .about_site{
   width:100%;
-  height:400px;
+  height:480px;
   // background-color: orange;
   padding:40px 150px 40px 100px;
   display:flex;
   justify-content: space-around;
-}
-.site_logo{
-  width:70px;
-  height:70px;
-  background-image: url(/images/shiki.jpg);
-  background-position: center;
-  border-radius:50%;
+  background-image:url(/images/koshi.jpg);
+  margin:80px 0;
 }
 .site_discription{
   // background-color: green;
   width:60%;
-  height:300px;
+  height:400px;
   text-align:center;
 }
 .site_discription_title{
   padding:20px 0;
-  font-size: 25px;
+  font-size: 24px;
 }
 .site_discription p{
   font-size: 15px;
   line-height: 270%;
-}
-.sign_up{
-  background-color: yellow;
-  width:25%;
-  height:300px;
-}
-.spot_index{
-  width:90%;
-  margin:20px auto;
-  padding:50px 0;
-  background-image:url(/images/koshi.jpg);
-  display:flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-.spot_item{
-  width:30%;
-  margin-bottom: 50px;
-  border-radius:10px;
-  background-color: white;
-}
-.spot_top{
-  width:100%;
-  height:270px;
-  background-color:red;
-  border-radius:10px;
-}
-.spot_bottom{
-  width:100%;
-  height:50px;
-  background-color: white;
-  border-radius:10px;
-  padding:10px 15px;
 }
 .spot_top_image{
   width:100%;
   height:270px;
   border-radius:10px;
 }
+.recommendation{
+  width:85%;
+  height:450px;
+  margin:0 auto;
+  display:flex;
+  text-align: center;
+  margin-bottom:30px;
+}
+.recommendation_image{
+  width:60%;
+  height:450px;
+  background-color: yellow;
+}
+.recommendation_content{
+  width:40%;
+  height:450px;
+  border-radius:1px solid black;
+  padding:35px;
+  opacity:0.8;
 
+}
+.recommendation_spot_image{
+  width:100%;
+  height:450px;
+}
+.recommendation_title{
+  width:70%;
+  font-size:20px;
+  letter-spacing: 10px;
+  margin:70px auto;
+  text-align: center;
+}
+.recommendation_title h2{
+  font-size:24px;
+}
+.recommendation_content h4{
+  font-size:20px;
+  text-align: left;
+  margin-bottom:20px;
+
+}
+.recommendation_content h5{
+
+}
+.recommend_text{
+  padding: 35px 0;
+}
+.recommend_text p{
+  font-size: 13px;
+  line-height: 160%;
+  text-align: left;
+  letter-spacing: 4px;
+}
+.recommend_link{
+  width:200px;
+  height:40px;
+  letter-spacing: 3px;
+}
+.spot_address{
+  width:40%;
+  display:flex;
+  justify-content: space-between;
+  font-size:20px;
+}
 // ▲トップページの記述▲
 //▼スポットの詳細ページ▼
 .show{
-  margin-top:120px;
-}
-.spot_container{
+  margin-top: 120px;
   width:100%;
-  display: flex;
-  flex-direction: row;
+  padding:0 120px;
 }
-.spot_content{
-  width:45%;
-  height:500px;
-  border:1px solid black;
-  line-height: 230%;
-  padding:20px 50px;
+.show_top{
+  width:100%;
+  height:600px;
+  display:flex;
 }
-.spot_images{
-  width:55%;
-  height:500px;
-  background-color: yellow;
+.show_top_left{
+  width:65%;
+  height:600px;
+}
+.show_top_right{
+  width:35%;
+  height:600px;
+  padding-right:30px;
+  padding-left: 60px;
+  padding-top:250px;
+  letter-spacing: 20px;
+  // background-color: yellow;
+}
+.show_top_right h3{
+  padding:20px;
+
 }
 .spot_image{
   width:100%;
-  height:500px;
+  height:600px;
 }
 .spot_name{
   padding:30px 0;
@@ -260,31 +292,80 @@
 .show_bottom{
   width:100%;
   margin-top:30px;
-  border-top:1px solid black;
+  border-top:4px solid #DCD4D4;
   display:flex;
+  justify-content: space-between;
 }
 .show_bottom_left{
-  width:45%;
+  width:60%;
   height:600px;
   // background-color: green;
-  margin-top:30px;
+  margin-top:15px;
+}
+.review{
+  display:flex;
+  padding:10px 10px;
+}
+.rated1{
+  width:160px;
+  padding-left:20px;
+  padding-top: 20px;
+}
+.score{
+  padding-left:20px;
+  padding-top: 20px;
+}
+.new_comment{
+  padding-top: 17px;
+  padding-left:280px;
 }
 .comment_list{
   width:100%;
+  height:780px;
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: space-between;
+
 }
-.comment{
-  background-color: yellow;
-  width:90%;
-  height:100px;
-  margin:20px auto;
+.comment_content{
+  width:30%;
+  padding:15px;
+  border:1px solid #DCD4D4;
+  margin:0 auto;
+}
+.comment_image{
+  width:100%;
+  height:150px;
+  margin-bottom: 10px;
+}
+.rated{
+  margin-bottom:10px;
 }
 .show_bottom_right{
-  width:50%;
+  width:35%;
   height:600px;
   // background-color: yellow;
   margin-top:30px;
+  padding-left:20px;
 }
-
-
-
+.comment_username{
+  margin:10px 0;
+}
+.show_spot_description{
+  width:100%;
+  line-height: 220%;
+  padding:40px 20px;
+}
+.show_title{
+  padding-bottom: 20px;
+}
+.map_btn{
+  width:30%;
+  margin:0 auto;
+}
+.google{
+  width:100%;
+  background-color: yellow;
+}
 //▲スポットの詳細ページ▲

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_19_061107) do
+ActiveRecord::Schema.define(version: 2019_03_21_084927) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -33,6 +33,12 @@ ActiveRecord::Schema.define(version: 2019_03_19_061107) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "add_comment_image_to_comments", force: :cascade do |t|
+    t.string "comment_image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
     t.integer "spot_id"
@@ -40,6 +46,7 @@ ActiveRecord::Schema.define(version: 2019_03_19_061107) do
     t.datetime "updated_at", null: false
     t.integer "star"
     t.text "comment"
+    t.string "comment_image"
   end
 
   create_table "favorites", force: :cascade do |t|
