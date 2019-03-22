@@ -11,11 +11,14 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require rails-ujs
+  //= require turbolinks
+  //= require jquery
+  //= require bootstrap-sprockets
+  //= require_tree .
+
 //= require activestorage
 //= require turbolinks
-//= require bootstrap-sprockets
-//= require_tree .
-//= require jquery
 //= require jquery.raty
 //= require underscore
 //= require gmaps/google

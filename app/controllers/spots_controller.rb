@@ -13,7 +13,7 @@ class SpotsController < ApplicationController
   def show
     @spot = Spot.find(params[:id])
     @comment = Comment.new
-    @comments = @spot.comments.all
+    @comments = @spot.comments.all.order(created_at: :desc)
   end
 
   # GET /spots/new

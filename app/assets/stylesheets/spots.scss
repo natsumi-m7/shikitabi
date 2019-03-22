@@ -321,9 +321,11 @@
 }
 .comment_list{
   width:100%;
+  height:780px;
   display:flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  align-content: space-between;
 
 }
 .comment_content{
@@ -362,5 +364,8 @@
   width:30%;
   margin:0 auto;
 }
-
+.google{
+  width:100%;
+  background-color: yellow;
+}
 //▲スポットの詳細ページ▲

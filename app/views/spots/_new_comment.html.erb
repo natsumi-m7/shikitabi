@@ -1,18 +1,38 @@
-<!-- モーダルウィンドウを呼び出すボタン -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">クリックするとモーダルウィンドウが開きます。</button>
- 
-<!-- モーダルウィンドウの中身 -->
-<div class="modal fade" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modal タイトル</h4>
-      </div>
-      <div class="modal-body">Modal内容</div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">閉じる</button>
-       </div>
-    </div>
-  </div>
+<button type="button" data-toggle="modal" data-backdrop="true" data-target="#modal-option" class="btn btn-default">コメントを投稿する</button>
+
+<div class="modal fade" id="modal-option" tabindex="-1" role="dialog" aria-labelledby="myModalOptionLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalOptionLabel">コメント投稿</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="閉じる"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <div class="comment_post">
+          <%= form_for [@spot,@comment] do |comment| %>
+            <%= comment.hidden_field :spot_id, value: @spot.id %>
+            <div class="field" id="star">
+                <%= comment.label :star %>
+                <%= comment.hidden_field :star, id: :review_star %>
+            </div>
+            <%= comment.file_field :comment_image, multipart: true %>
+            <label><%= comment.label :comment %></label>
+            <%= comment.text_area :comment, :size => "43x10" %><br>
+            <%= comment.submit "レビュー評価", :class => "btn btn-primary" %>
+          <% end %>
+          <script>
+          $('#star').raty({
+            size:36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            scoreName: 'comment[star]'
+          });
+          </script>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+      </div>
+    </div>
+  </div>
 </div>
