@@ -9,7 +9,7 @@
 // ▼ヘッダーの記述▼
 .header_container{
   width: 100%;
-  height: 100px;
+  height: 80px;
   background-color:white;
   position: fixed;
   top: 0;
@@ -248,25 +248,35 @@
 // ▲トップページの記述▲
 //▼スポットの詳細ページ▼
 .show{
-  margin-top:120px;
-}
-.spot_show_image{
+  margin-top: 120px;
   width:100%;
+  padding:0 120px;
+}
+.show_top{
+  width:100%;
+  height:600px;
   display:flex;
 }
-.spot_images{
-  width:80%;
+.show_top_left{
+  width:65%;
   height:600px;
-  background-color: yellow;
+}
+.show_top_right{
+  width:35%;
+  height:600px;
+  padding-right:30px;
+  padding-left: 60px;
+  padding-top:250px;
+  letter-spacing: 20px;
+  // background-color: yellow;
+}
+.show_top_right h3{
+  padding:20px;
+
 }
 .spot_image{
-  width:80%;
+  width:100%;
   height:600px;
-}
-.show_spot_name{
-  width:200px;
-  height:100px;
-  background-color: yellow;
 }
 .spot_name{
   padding:30px 0;
@@ -282,31 +292,75 @@
 .show_bottom{
   width:100%;
   margin-top:30px;
-  border-top:1px solid black;
+  border-top:4px solid #DCD4D4;
   display:flex;
+  justify-content: space-between;
 }
 .show_bottom_left{
-  width:45%;
+  width:60%;
   height:600px;
   // background-color: green;
-  margin-top:30px;
+  margin-top:15px;
+}
+.review{
+  display:flex;
+  padding:10px 10px;
+}
+.rated1{
+  width:160px;
+  padding-left:20px;
+  padding-top: 20px;
+}
+.score{
+  padding-left:20px;
+  padding-top: 20px;
+}
+.new_comment{
+  padding-top: 17px;
+  padding-left:280px;
 }
 .comment_list{
   width:100%;
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
 }
-.comment{
-  background-color: yellow;
-  width:90%;
-  height:100px;
-  margin:20px auto;
+.comment_content{
+  width:30%;
+  padding:15px;
+  border:1px solid #DCD4D4;
+  margin:0 auto;
+}
+.comment_image{
+  width:100%;
+  height:150px;
+  margin-bottom: 10px;
+}
+.rated{
+  margin-bottom:10px;
 }
 .show_bottom_right{
-  width:50%;
+  width:35%;
   height:600px;
   // background-color: yellow;
   margin-top:30px;
+  padding-left:20px;
 }
-
-
+.comment_username{
+  margin:10px 0;
+}
+.show_spot_description{
+  width:100%;
+  line-height: 220%;
+  padding:40px 20px;
+}
+.show_title{
+  padding-bottom: 20px;
+}
+.map_btn{
+  width:30%;
+  margin:0 auto;
+}
 
 //▲スポットの詳細ページ▲

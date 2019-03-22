@@ -1,82 +1,77 @@
 <%= render 'spots/header' %>
 <div class="show">
-    <div class="spot_images">
-      <div class="spot_images">
-        <%= image_tag @spot.images.url, class: "spot_image"%>
-      </div>
-      <div class="show_spot_name">
-        <h3><% @spot.spot_name %></h3>
-      </div>
-    </div>
-
-  <div class="show_bottom">
-    <div class="show_bottom_left">
-      <!-- コメント・レビュー投稿フォーム -->
-      <div class="review">
-        <div class="rated" data-score="<%= @spot.average_star %>"></div>
-            <% if @spot.average_star.present? %>
-            <%= @spot.average_star.round(1) %> / 5.0
-            <% end %>
-        <h3>コメント投稿</h3>
-        <%= form_for [@spot,@comment] do |comment| %>
-          <%= comment.hidden_field :spot_id, value: @spot.id %>
-          <div class="field" id="star">
-              <%= comment.label :star %>
-              <%= comment.hidden_field :star, id: :review_star %>
-          </div>
-          <label><%= comment.label :comment %></label>
-          <%= comment.text_area :comment, :size => "43x10" %><br>
-          <%= comment.submit "レビュー評価", :class => "btn btn-primary" %>
-        <% end %>
-        <script>
-        $('#star').raty({
-          size:36,
-          starOff:  '<%= asset_path('star-off.png') %>',
-          starOn : '<%= asset_path('star-on.png') %>',
-          scoreName: 'comment[star]'
-        });
-        </script>
-      </div>
-
-      <!-- コメント一覧表示 -->
-      <div class="comment_list">
-        <h3>コメント一覧</h3>
-        <% @comments.each do |comment| %>
-        <div class="comment">
-          <%= comment.comment %><br>
-          <%= comment.user.nickname %>
-          <!-- 評価された星を表示する記述 -->
-          <div class="rated" data-score="<%= comment.star %>"></div>
+    <div class="show_top">
+        <div class="show_top_left">
+          <%= image_tag @spot.images.url, class: "spot_image"%>
         </div>
-        <% end %>
+      <div class="show_top_right">
+        <h3><%= @spot.spot_name %></h3>
       </div>
-
     </div>
 
+    <div class="show_bottom">
+      <div class="show_bottom_left">
+        <div class="review">
+          <h3 class="show_title">レビュー一覧</h3>
+          <div class="rated rated1" data-score="<%= @spot.average_star %>"></div>
+          <div class="score">
+            <% if @spot.average_star.present? %>
+              　<%= @spot.average_star.round(1) %> / 5.0
+            <% end %>
+          </div>
+          <div class="new_comment">
+            <%= render 'spots/new_comment' %>
+          </div>
+        </div>
+        <!-- コメント一覧表示 -->
+        <div class="comment_list">
+          <% @comments.each do |comment| %>
+            <div class="comment_content">
+              <%= image_tag comment.comment_image.url, class: "comment_image"%>
+              <!-- 評価された星を表示する記述 -->
+              <div class="rated" data-score="<%= comment.star %>"></div>
+              <%= comment.comment %><br>
+              <div class="comment_username">
+                <%= comment.user.nickname %>
+              </div>
+            </div>
+          <% end %>
+        </div>
 
-
-    <div class="show_bottom_right">
-      <!-- ここからGoogleMapの記述 -->
-      <div id="map" style='width: 110%; height: 500px;'></div>
-      <script type="text/javascript">
-        handler = Gmaps.build('Google');
-        handler.buildMap({ provider: { scrollwheel: false }, internal: {id: 'map'}}, function(){
-          markers = handler.addMarkers([
-            {
-              "lat": <%= @spot.latitude %>,
-              "lng": <%= @spot.longitude %>,
-          "infowindow": '<p><%= @spot.spot_name %></p><p><%= @spot.spot_address %></p><p><%= link_to "Googleマップで見る" ,"https://maps.google.co.jp/maps?q=loc:#{@spot.latitude},#{@spot.longitude}&iwloc=J",target: "_blank" %></p>'
-            }
-          ]);
-          handler.bounds.extendWith(markers);
-          handler.fitMapToBounds();
-          handler.getMap().setZoom(17);
-        });
-      </script>
-
+      </div>
+          <div class="show_bottom_right">
+      <h3 class="show_title">見どころ</h3>
+      <div class="show_spot_description">
+        <%= @spot.description %>
+      </div>
+      <div class="map_btn">
+        <%= render 'spots/new_window' %>
+      </div>
+    </div>
 
     </div>
-  </div>
+</div>
+<div>
+            <h3 class="show_title">コメント投稿</h3>
+          <%= form_for [@spot,@comment] do |comment| %>
+            <%= comment.hidden_field :spot_id, value: @spot.id %>
+            <div class="field" id="star">
+                <%= comment.label :star %>
+                <%= comment.hidden_field :star, id: :review_star %>
+            </div>
+            <%= comment.file_field :comment_image, multipart: true %>
+            <label><%= comment.label :comment %></label>
+            <%= comment.text_area :comment, :size => "43x10" %><br>
+            <%= comment.submit "レビュー評価", :class => "btn btn-primary" %>
+          <% end %>
+          <script>
+          $('#star').raty({
+            size:36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            scoreName: 'comment[star]'
+          });
+          </script>
 </div>
 
 <!-- 評価された星を表示する記述 -->
