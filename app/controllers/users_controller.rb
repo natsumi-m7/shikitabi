@@ -4,15 +4,18 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @user_followers = @user.followers
+    @user_followings = @user.followings
+    @comments = @user.comments.all
+    @favorites = current_user.favorite_spots.order(id: "desc")
   end
   def follows
     user = User.find(params[:id])
-    @users = user.followings
   end
 
   def followers
     user = User.find(params[:id])
-    @users = user.followers
+    @user_followers = user.followers
   end
 
   def new
@@ -28,7 +31,9 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update(user_params)
-    redirect_to user_path(@user.id)
+      sign_in(@user, bypass: true) if current_user.id == @user.id
+      #　パスワードを編集すると、deviseの特性上自動的にログアウトしてしまうので、それを防ぐ為の記述。
+      redirect_to user_path(@user.id)
     else
       render :edit
     end
@@ -40,7 +45,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:lastname,:firstname,:lastname_kana,:firstname_kana,:nickname,:postal,:address,:user_image,:email,:password,:password_confirmation,:user_image)
+    params.require(:user).permit(:lastname,:firstname,:lastname_kana,:firstname_kana,:nickname,:postal,:address,:user_image,:email,:password,:password_confirmation,:user_image,:introduction)
   end
 
 end

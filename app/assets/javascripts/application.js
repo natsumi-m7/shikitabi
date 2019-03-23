@@ -33,7 +33,6 @@
  * version: 2.9.0
  *
  */
-
 (function($) {
   'use strict';
 
@@ -786,3 +785,4 @@
     targetType:   'hint'
   };
 })(jQuery);
+

@@ -1,0 +1,35 @@
+<div class="user_favorite">
+	<div class="favorite_spot">
+		<% @favorites.each do |spot| %>
+	        <div class="favorite">
+	        	<div class="favorite_top">
+	        		<p><%= spot.spot_name %></p>
+	          		<%= image_tag spot.images.url, class: "favorite_spot_image"%>
+	          	</div>
+	          	<div class="favorite_center">
+		          評価：
+		          <div class="score2">
+		            <% if spot.average_star.present? %>
+		              　<%= spot.average_star.round(1) %> / 5.0
+		            <% end %>
+		          </div>
+		          <div class="rated rated2" data-score="<%= spot.average_star %>"></div>
+		        </div>
+	            <div class="favorite_bottom">
+	          	  <% if spot.favorited_by?(current_user) %>
+	                 <%= link_to "お気に入りから外す",spot_favorites_path(spot),method: :delete,class: "btn btn-default" %>
+	              <% end %>
+	            </div>
+	        </div>
+		<% end %>
+	</div>
+</div>
+<script>
+  $('.rated').raty({
+    path: '/assets/',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+</script>

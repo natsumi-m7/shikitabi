@@ -1,50 +1,66 @@
 <%= render 'spots/header' %>
 
-<div class="user_info">
-	<%= @user.lastname %>
-	<%= @user.firstname %>
-	<%= @user.lastname_kana %>
-	<%= @user.firstname_kana %>
-	<%= image_tag @user.user_image.url%>
+<div class="mypage_container ">
+    <div class="mypage_left">
+        <div class="user_profile">
+            <%= image_tag @user.user_image.url,class: "profile_image"%>
+            <%= @user.nickname %>
+            <div class="follow_edit">
+                <% if current_user != @user %>
+                    <% if @user.followed_by?(current_user) %>
+                        <p><%=link_to "フォローを解除する", user_relations_path(@user.id), method: :delete,class: "btn btn-default" %></p>
+                    <% else %>
+                        <p><%=link_to "このユーザーをフォローする", user_relations_path(@user.id), method: :post ,class: "btn btn-default"%></p>
+                    <% end %>
+                <% else %>
+                    <%= render 'users/user_edit' %>
+                <% end %>
+            </div>
+        </div>
+        <div class="mypage_discription">
+            <div class="discription_title"><h4>マイページについて</h4></div>
+            <div class="discription_subtitle">お気に入り</div>
+            <div class="discription_content">今までに登録した<br>お気に入りした一覧が見れます。</div>
+            <div class="discription_subtitle">投稿履歴</div>
+            <div class="discription_content">コメントを投稿した<br>履歴の一覧が見れます。</div>
+            <div class="discription_subtitle">フォロー</div>
+            <div class="discription_content">あなたがフォローしている<br>ユーザーの一覧が見れます。</div>
+            <div class="discription_subtitle">フォロワー</div>
+            <div class="discription_content">あなたがフォローされている<br>ユーザーの一覧が見れます。</div>
+        </div>
+    </div>
+    <div class="mypage_right">
+        <!-- タブ・メニュー -->
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#sampleContentB" data-toggle="tab">投稿履歴</a></li>
+            <li><a href="#sampleContentC" data-toggle="tab">フォロー(<%= @user_followings.count %>)</a></li>
+            <li><a href="#sampleContentD" data-toggle="tab">フォロワー(<%= @user_followers.count %>)</a></li>
+            <% if @user=current_user && user_signed_in? %>
+                <li><a href="#sampleContentA" data-toggle="tab">お気に入り</a></li>
+            <% end %>
+        </ul>
 
-
+        <!-- タブ内容 -->
+        <div class="tab-content">
+            <div class="tab-pane" id="sampleContentB">
+                <%= render 'users/user_comments' %>
+            </div>
+            <div class="tab-pane" id="sampleContentC">
+                <div class="following">
+                    <%= render 'users/follows' %>
+                </div>
+            </div>
+            <div class="tab-pane" id="sampleContentD">
+                <div class="following">
+                    <%= render 'users/followers' %>
+                </div>
+            </div>
+            <% if @user=current_user && user_signed_in?%>
+            <div class="tab-pane active" id="sampleContentA">
+                <%= render 'users/user_favorite' %>
+            </div>
+            <% end %>
+        </div>
+    </div>
 </div>
-<div class="follow">
 
-    <!-- 追加 -->
-<p><%=link_to "フォロー", follows_user_path(@user.id) %></p>
-<p><%=link_to "フォロワー", followers_user_path(@user.id) %></p>
-<% if current_user != @user %>
-    <% if @user.followed_by?(current_user) %>
-        <p><%=link_to "フォロー済み", user_relations_path(@user.id), method: :delete %></p>
-    <% else %>
-        <p><%=link_to "フォローする", user_relations_path(@user.id), method: :post %></p>
-    <% end %>
-<% end %>
-<!--ここまで -->
-
-</div>
-<div class="favorite_spot"></div>
-<!-- タブ・メニュー -->
-<ul class="nav nav-tabs">
-    <li><a href="#sampleContentA" data-toggle="tab">タブＡ</a></li>
-    <li class="active"><a href="#sampleContentB" data-toggle="tab">タブＢ</a></li>
-    <li><a href="#sampleContentC" data-toggle="tab">タブＣ</a></li>
-    <li><a href="#sampleContentD" data-toggle="tab">タブＤ</a></li>
-</ul>
-
-<!-- タブ内容 -->
-<div class="tab-content">
-    <div class="tab-pane" id="sampleContentA">
-        <p>タブＡの内容</p>
-    </div>
-    <div class="tab-pane active" id="sampleContentB">
-        <p>タブＢの内容</p>
-    </div>
-    <div class="tab-pane" id="sampleContentC">
-        <p>タブＣの内容</p>
-    </div>
-    <div class="tab-pane" id="sampleContentD">
-        <p>タブＤの内容</p>
-    </div>
-</div>

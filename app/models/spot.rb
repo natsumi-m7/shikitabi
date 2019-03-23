@@ -24,4 +24,7 @@ class Spot < ApplicationRecord
         '栃木':6,
         '茨城':7,
     }
+    def favorited_by?(user)
+        favorites.where(user_id: user.id).exists?
+    end
 end
