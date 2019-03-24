@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user_followers = @user.followers
     @user_followings = @user.followings
-    @comments = @user.comments.all
+    @comments = @user.comments.page(params[:page])
     @favorites = current_user.favorite_spots.order(id: "desc")
   end
   def follows
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
   def followers
     user = User.find(params[:id])
-    @user_followers = user.followers
+    @user_followers = user.followers111
   end
 
   def new

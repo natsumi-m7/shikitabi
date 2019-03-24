@@ -35,14 +35,15 @@
             <li class="active"><a href="#sampleContentB" data-toggle="tab">投稿履歴</a></li>
             <li><a href="#sampleContentC" data-toggle="tab">フォロー(<%= @user_followings.count %>)</a></li>
             <li><a href="#sampleContentD" data-toggle="tab">フォロワー(<%= @user_followers.count %>)</a></li>
-            <% if @user=current_user && user_signed_in? %>
+            <% if @user == current_user %>
+
                 <li><a href="#sampleContentA" data-toggle="tab">お気に入り</a></li>
             <% end %>
         </ul>
 
         <!-- タブ内容 -->
         <div class="tab-content">
-            <div class="tab-pane" id="sampleContentB">
+            <div class="tab-pane active" id="sampleContentB">
                 <%= render 'users/user_comments' %>
             </div>
             <div class="tab-pane" id="sampleContentC">
@@ -55,8 +56,8 @@
                     <%= render 'users/followers' %>
                 </div>
             </div>
-            <% if @user=current_user && user_signed_in?%>
-            <div class="tab-pane active" id="sampleContentA">
+            <% if @user == current_user %>
+            <div class="tab-pane" id="sampleContentA">
                 <%= render 'users/user_favorite' %>
             </div>
             <% end %>

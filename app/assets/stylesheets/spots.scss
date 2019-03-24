@@ -335,7 +335,6 @@
   display:flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  align-content: space-between;
 
 }
 .comment_content{
@@ -343,7 +342,7 @@
   height:430px;
   padding:15px;
   border:1px solid #DCD4D4;
-  margin:0 auto;
+  margin-bottom: 20px;
 }
 .comment_image{
   width:100%;

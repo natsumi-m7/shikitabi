@@ -11,18 +11,16 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require rails-ujs
-  //= require turbolinks
-  //= require jquery
-  //= require bootstrap-sprockets
-  //= require_tree .
+//= require turbolinks
+//= require_tree .
 
 //= require activestorage
-//= require turbolinks
+//= require jquery
+//= require jquery_ujs
 //= require jquery.raty
+//= require bootstrap-sprockets
 //= require underscore
 //= require gmaps/google
-
 /*!
  * jQuery Raty - A Star Rating Plugin
  *
