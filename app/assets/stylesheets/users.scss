@@ -1,3 +1,152 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.mypage_container{
+	width:100%;
+	display:flex;
+	padding:0 7%;
+	margin-top: 100px;
+}
+.mypage_left{
+	width:30%;
+	height:1000px;
+	padding:5px 15px;
+	// background-color: black;
+}
+.follow_edit{
+	margin:15px 0;
+}
+.mypage_discription{
+	width:70%;
+	margin:15px auto;
+	border:2px solid #D7D2D2;
+	text-align:center;
+	background-image:url(/images/koshi.jpg);
+	padding:10px;
+}
+.discription_title,.discription_content{
+	width:100%;
+	border-bottom:solid 1px white;
+}
+.discription_title{
+	padding:7px;
+	background-color: rgba(255,255,255,0.7);
+	border-radius:3px;
+}
+.discription_title h4{
+	font-size: 16px;
+}
+.discription_subtitle{
+	width:100%;
+	padding:7px 0;
+	border-bottom:dotted 1px #D7D2D2;
+}
+.discription_content{
+	padding:7px 0;
+	border:solid 2px #D7D2D2;
+}
+.mypage_right{
+	width:70%;
+	height:1000px;
+	// background-color: orange;
+}
+.profile_image{
+	width:200px;
+	height:200px;
+	border-radius:100px;
+	margin-bottom:20px;
+}
+.user_profile{
+	width:50%;
+	margin:0 auto;
+	text-align: center;
+}
+// ▼フォロータブの記述▼
+.following{
+	width:100%;
+	padding:30px 20px;
+	display:flex;
+	justify-content: space-between;
+  	flex-wrap: wrap;
+	background-color: white;
+}
+.follow_image{
+	width:80px;
+	height:80px;
+	border-radius: 40px;
+}
+.follow_user{
+	width:48%;
+	border:1px solid #DCD4D4;
+	display:flex;
+	margin:10px 0;
+	padding:10px;
+}
+.follow_user_left{
+	width:30%;
+}
+.follow_user_right{
+	width:70%;
+}
+.follow_btn{
+	float:right;
+}
+.follow_user_introduction{
+	margin-top:5px;
+	padding:5px;
+	border-top:1px solid #DCD4D4;
+}
+.user_comments{
+	padding:18px;
+}
+.user_favorite{
+	width:100%;
+	padding:18px;
+}
+.favorite_spot{
+	width:100%;
+	height:730px;
+	display:flex;
+	justify-content: space-between;
+  	flex-wrap: wrap;
+  	align-content: space-between;
+}
+.favorite{
+	width:30%;
+	border:1px solid #DCD4D4;
+	padding:10px;
+}
+.favorite_spot_image{
+	width:100%;
+	height:200px;
+}
+
+.favorite_top{
+	width:100%;
+	height:220px;
+}
+.favorite p{
+	font-size:13px;
+}
+.favorite_center{
+	width:100%;
+	height:40px;
+	display:flex;
+	padding:15px;
+}
+.favorite_bottom{
+	width:100%;
+	margin:10px auto;
+	height:40px;
+	text-align: center;
+}
+.rated2{
+	padding-left: 20px;
+}
+.comment_spot{
+	padding-bottom:5px;
+}
+.comment_spot p{
+	font-size:13px;
+}
+// ▲フォロータブの記述▲

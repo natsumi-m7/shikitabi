@@ -1,2 +1,38 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<%= render 'spots/header' %>
+
+<div class="mypage_container ">
+    <div class="mypage_left">
+        <div class="mypage_discription">
+            <div class="discription_title"><h4>マイページについて</h4></div>
+            <div class="discription_subtitle">お気に入り</div>
+            <div class="discription_content">今までに登録した<br>お気に入りした一覧が見れます。</div>
+            <div class="discription_subtitle">投稿履歴</div>
+            <div class="discription_content">コメントを投稿した<br>履歴の一覧が見れます。</div>
+            <div class="discription_subtitle">フォロー</div>
+            <div class="discription_content">あなたがフォローしている<br>ユーザーの一覧が見れます。</div>
+            <div class="discription_subtitle">フォロワー</div>
+            <div class="discription_content">あなたがフォローされている<br>ユーザーの一覧が見れます。</div>
+        </div>
+    </div>
+    <div class="mypage_right">
+        <!-- タブ・メニュー -->
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#sampleContentB" data-toggle="tab">新規スポット追加</a></li>
+            <li><a href="#sampleContentC" data-toggle="tab">スポット一覧</a></li>
+            <li><a href="#sampleContentD" data-toggle="tab">ユーザー一覧</a></li>
+        </ul>
+
+        <!-- タブ内容 -->
+        <div class="tab-content">
+            <div class="tab-pane active" id="sampleContentB">
+                <%= render 'spots/new' %>
+            </div>
+            <div class="tab-pane" id="sampleContentC">
+                <%= render 'spots/index' %>
+            </div>
+            <div class="tab-pane" id="sampleContentD">
+                <%= render 'users/index' %>
+            </div>
+        </div>
+    </div>
+</div>

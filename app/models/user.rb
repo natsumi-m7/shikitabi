@@ -8,6 +8,7 @@ class User < ApplicationRecord
 		has_many :comments,dependent: :destroy
 		has_many :went_spots,dependent: :destroy
 		mount_uploader :user_image, UserImageUploader
+    has_many :favorite_spots, through: :favorites, source: :spot
 
   # ====================自分がフォローしているユーザーとの関連 ===================================
   #フォローする側のUserから見て、フォローされる側のUserを(中間テーブルを介して)集める。なので親はfollowing_id(フォローする側)

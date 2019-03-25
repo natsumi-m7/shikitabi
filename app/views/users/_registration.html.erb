@@ -1,4 +1,15 @@
-<h2>Sign up</h2>
+
+<button type="button" data-toggle="modal" data-backdrop="true" data-target="#modal4-option" class="btn btn-default">ログインする</button>
+
+<div class="modal fade" id="modal4-option" tabindex="-1" role="dialog" aria-labelledby="myModalOptionLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalOptionLabel">コメント投稿</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="閉じる"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -67,3 +78,12 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+      </div>
+    </div>
+  </div>
+</div>
