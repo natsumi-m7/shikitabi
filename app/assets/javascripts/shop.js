@@ -14,3 +14,4 @@ $(document).on('turbolinks:load', function() {
     // 読み込み中もしくは読んだ後に表示する項目
   });
 });
+
