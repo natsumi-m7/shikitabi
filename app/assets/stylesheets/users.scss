@@ -150,3 +150,70 @@
 	font-size:13px;
 }
 // ▲フォロータブの記述▲
+// ▼管理者ページのスポット一覧の記述▼
+.admin_spot_table{
+	width:100%;
+	border:1px solid #D7D2D2;
+}
+
+.admin_spots{
+	width:100%;
+}
+.admin_spot_image{
+	width:100%;
+	height:110px;
+}
+
+.admin_spot_item{
+	display:flex;
+	width:100%;
+	height:150px;
+	border-bottom:1px solid #D7D2D2;
+}
+.spot_image_btn{
+	width:20%;
+}
+.edit_destroy{
+	padding:5px;
+	display:flex;
+	justify-content: space-around;
+}
+.spot_season{
+	width:5%;
+	text-align:center;
+	border-right:1px solid #D7D2D2;
+	border-left:1px solid #D7D2D2;
+}
+.center_item{
+	line-height:150px;
+}
+.spot_prefecture_address{
+	width:25%;
+}
+.spot_description{
+	width:40%;
+	border-right:1px solid #D7D2D2;
+	border-left:1px solid #D7D2D2;
+}
+.spot_average_star{
+	width:10%;
+	text-align:center;
+}
+.admin_spot_item_title{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	display:flex;
+	border-bottom:1px solid #D7D2D2;
+}
+.spot_prefecture{
+	width:100%;
+	height:50px;
+	border-bottom:1px solid #D7D2D2;
+}
+.spot_spot_address{
+	width:100%;
+	height:100px;
+}
+// ▲管理者ページのスポット一覧の記述▲

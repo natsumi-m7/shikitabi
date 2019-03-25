@@ -412,25 +412,13 @@
 //▲スポットの詳細ページ▲
 //▼新規投稿ページ▼
 .new_spot{
-  padding-top:60px;
-  width:40%;
-  margin:0 auto;
-}
-.form_top{
+  margin-top:50px;
+  padding-right: 30px;
   width:100%;
+}
+.season_prefecture{
   display:flex;
-  justify-content: space-between;
-}
-.form_bottom{
-  width:100%;
-  display:flex;
-  justify-content: space-between;
-}
-.form_season{
-  margin-left:50px;
-}
-.form_address{
-  margin-left:83px;
+  justify-content:space-between;
 }
 //▲新規投稿ページ▲
 
