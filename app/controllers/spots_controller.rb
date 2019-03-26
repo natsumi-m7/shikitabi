@@ -23,6 +23,7 @@ class SpotsController < ApplicationController
 
   # GET /spots/1/edit
   def edit
+    @spot = Spot.find(params[:id])
   end
 
   # POST /spots
@@ -38,17 +39,17 @@ class SpotsController < ApplicationController
 
   # PATCH/PUT /spots/1
   def update
-    if @spot.update(spot_params)
-      redirect_to @spot, notice: 'Spot was successfully updated.'
-    else
-      render :edit
+    spot = Spot.find(params[:id])
+    if spot.update(spot_params)
+      redirect_to users_path
     end
   end
 
   # DELETE /spots/1
   def destroy
-    @spot.destroy
-    redirect_to spots_url, notice: 'Spot was successfully destroyed.'
+    spot = Spot.find(params[:id])
+    spot.destroy
+    redirect_to users_path
   end
 
   private

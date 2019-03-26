@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   def index
+    @spots = Spot.page(params[:spot_page]).per(6)
+    @users = User.page(params[:user_page]).per(8)
   end
 
   def show

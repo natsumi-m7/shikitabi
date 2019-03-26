@@ -71,7 +71,7 @@
 			</div>
 	</div>
 	<div class="spot_index">
-	<% @spots.each do |spot| %>
+		<% @spots.each do |spot| %>
 			<div class="spot_item">
 				<div class="spot_top">
 		        	<%=link_to image_tag(spot.images.url,class: "spot_top_image"),spot_path(spot.id)%>
@@ -80,7 +80,7 @@
 					<%= spot.spot_name %>
 				</div>
 			</div>
-	<% end %>
+		<% end %>
 	</div>
 	</div>
 </div>

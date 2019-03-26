@@ -150,3 +150,147 @@
 	font-size:13px;
 }
 // ▲フォロータブの記述▲
+// ▼管理者ページのスポット一覧の記述▼
+.admin_spot_table{
+	width:100%;
+	border:1px solid #D7D2D2;
+}
+
+.admin_spots{
+	width:100%;
+}
+.admin_spot_image{
+	width:100%;
+	height:110px;
+}
+
+.admin_spot_item{
+	display:flex;
+	width:100%;
+	height:150px;
+	border-bottom:1px solid #D7D2D2;
+}
+.spot_image_btn{
+	width:20%;
+}
+.edit_destroy{
+	padding:5px;
+	display:flex;
+	justify-content: space-around;
+}
+.spot_season{
+	width:5%;
+	text-align:center;
+	border-right:1px solid #D7D2D2;
+	border-left:1px solid #D7D2D2;
+}
+.center_item{
+	line-height:150px;
+}
+.spot_prefecture_address{
+	width:25%;
+}
+.spot_description{
+	width:40%;
+	padding:3px;
+	border-right:1px solid #D7D2D2;
+	border-left:1px solid #D7D2D2;
+}
+.spot_average_star{
+	width:10%;
+	text-align:center;
+}
+.admin_spot_item_title{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	display:flex;
+	border-bottom:1px solid #D7D2D2;
+}
+.spot_prefecture{
+	width:100%;
+	height:50px;
+	border-bottom:1px dotted #D7D2D2;
+}
+.spot_spot_address{
+	width:100%;
+	height:100px;
+}
+// ▲管理者ページのスポット一覧の記述▲
+// ▼管理者ページのユーザー一覧の記述▼
+.admin_user_item{
+	width:100%;
+	display:flex;
+	height:150px;
+	border-bottom:1px solid #D7D2D2;
+}
+.admin_user_image{
+	width:15%;
+	margin:0 auto;
+	text-align:center;
+}
+.admin_user_image_photo{
+	width:100%;
+	height:110px;
+	margin:0 auto;
+	border-bottom:1px solid #D7D2D2;
+}
+.admin_user_photo{
+	width:100px;
+	height:100px;
+	border-radius:50%;
+	margin-top:5px;
+}
+.admin_user_name{
+	width:15%;
+	border-right:1px solid #D7D2D2;
+	border-left:1px solid #D7D2D2;
+}
+.user_lastname_firstname{
+	border-bottom:1px dotted #D7D2D2;
+	height:60px;
+}
+.admin_user_namekana{
+	height:60px;
+}
+.admin_user_nickname{
+	width:15%;
+}
+.admin_user_address{
+	width:15%;
+	border-right:1px solid #D7D2D2;
+	border-left:1px solid #D7D2D2;
+}
+.admin_address_postal{
+	border-bottom:1px dotted #D7D2D2;
+	height:60px;
+}
+.admin_user_email{
+	width:10%;
+}
+.admin_user_introduction{
+	padding:3px;
+	width:20%;
+	border-right:1px solid #D7D2D2;
+	border-left:1px solid #D7D2D2;
+}
+.admin_user_created_at{
+	width:10%;
+	text-align:center;
+}
+// ▲管理者ページのユーザー一覧の記述▲
+
+
+
+
+
+
+
+
+
+
+
+
+
+
