@@ -4,7 +4,7 @@
 	<%= form_with model:@spot, local: true do |f| %>
 		<div class="form-group">
 			<%= f.label :spot_name, "スポット名", class:"label-bold" %><br>
-			<%= f.text_field :spot_name ,class:"form-ucr"%><br>
+			<%= f.text_field :spot_name ,class:"form-control form-ucr"%><br>
 		</div>
 		<div class="season_prefecture">
 			<div class="form_season form-group">
@@ -16,10 +16,10 @@
 				<%= f.select :prefecture, Spot.prefectures.keys, { prompt: '選択してください' } %>
 			</div>
 		</div>
-			<div class="form_address form-group">
-				<%= f.label :spot_address, "場所", class:"label-bold" %><br>
-				<%= f.text_field :spot_address ,class:"form-control form-ucr"%>
-			</div>
+		<div class="form_address form-group">
+			<%= f.label :spot_address, "場所", class:"label-bold" %><br>
+			<%= f.text_field :spot_address ,class:"form-control form-ucr"%>
+		</div>
 		<div class="form-group">
 			<%= f.label :description, "内容", class:"label-bold" %><br>
 			<%= f.text_area :description ,class:"form-control form-ucr" %>

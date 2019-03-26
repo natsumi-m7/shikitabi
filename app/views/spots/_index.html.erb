@@ -1,4 +1,5 @@
 <div class="admin_spot_table">
+	<!-- テーブルのタイトル部分 -->
 	<div class="admin_spot_item_title">
 		<div class="spot_image_btn">スポット
 		</div>
@@ -11,13 +12,13 @@
 		<div class="spot_average_star">評価
 	  	</div>
 	</div>
-
+	<!-- テーブルの中身 -->
 	<div class="admin_spots">
 		<% @spots.each do |spot| %>
 			<div class="admin_spot_item">
 				<div class="spot_image_btn">
 					<div>
-			        	<%= image_tag spot.images.url, class: "admin_spot_image"%>
+			        	<%= link_to image_tag(spot.images.url,class: "admin_spot_image"), spot_path(spot.id)%>
 					</div>
 					<div class="edit_destroy">
 						<%= render 'spots/edit', spot: spot %>
@@ -47,3 +48,5 @@
 		<% end %>
 	</div>
 </div>
+<%= paginate @spots, class: "paginate",:param_name => 'spot_page' %>
+<!-- 同一ページで複数のページャを適用させる為、param_nameでページャを指定している -->
