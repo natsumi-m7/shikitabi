@@ -1,9 +1,9 @@
 <%= render 'spots/header' %>
 <div class="show">
     <div class="show_top">
-        <div class="show_top_left">
-          <%= image_tag @spot.images.url, class: "spot_image"%>
-        </div>
+      <div class="show_top_left">
+        <%= image_tag @spot.images.url, class: "spot_image"%>
+      </div>
       <div class="show_top_right">
         <h3><%= @spot.spot_name %></h3>
       </div>
@@ -24,7 +24,7 @@
             </div>
           <% end %>
         </div>
-          <%= render 'spots/new_comment' %>
+        <%= render 'spots/new_comment' %>
         <!-- コメント一覧表示 -->
         <div class="comment_list">
           <% @comments.each do |comment| %>

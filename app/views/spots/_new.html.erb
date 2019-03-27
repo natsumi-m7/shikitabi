@@ -1,6 +1,5 @@
 <div class="new_spot">
 	<h2>スポットの追加</h2>
-
 	<%= form_with model:@spot, local: true do |f| %>
 		<div class="form-group">
 			<%= f.label :spot_name, "スポット名", class:"label-bold" %><br>
@@ -31,7 +30,6 @@
 		<div class="form-group">
 			<%= f.submit '新規追加' ,class: "form-control btn btn-primary"%>
 		</div>
-
 	<% end %>
 </div>
 
