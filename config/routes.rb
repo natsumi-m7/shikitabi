@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     get :followers, on: :member
   end
   resources :relationships,only: [:create, :destroy]
-  resources :spots do
+  resources :spots,except:[:new] do
       resources :comments,only:[:create,:destroy]
       resource :favorites,only:[:create,:destroy]
       resources :went_spots,only:[:create,:destroy]
