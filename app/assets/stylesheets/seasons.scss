@@ -112,7 +112,10 @@
   background-image:url(/images/koshi.jpg);
   display:flex;
   justify-content: space-around;
+  // 水平方向の揃え
   flex-wrap: wrap;
+  // 小要素の折り返し
+  align-content: space-between;
 }
 .spot_item{
   width:30%;

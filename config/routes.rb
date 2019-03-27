@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/', to: 'spots#top'
   # get '/spots/new', to: 'spots#new'
   # post '/spots', to: 'spots#create'
-  resources :users do
+  resources :users,except:[:edit,:new,:create] do
     resource :relations,only:[:create,:destroy]
     get :follows, on: :member
     get :followers, on: :member

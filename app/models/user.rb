@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  		devise :database_authenticatable, :registerable,
+  	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
 		has_many :favorites,dependent: :destroy
@@ -9,6 +9,10 @@ class User < ApplicationRecord
 		has_many :went_spots,dependent: :destroy
 		mount_uploader :user_image, UserImageUploader
     has_many :favorite_spots, through: :favorites, source: :spot
+    # validates :introduciton,presence: true,length: {maximum:65}
+    validates :nickname,presence: true,uniqueness: true,length: {minimum:4,maximum:8}
+    validates :postal, format: {with: /\A[0-9]{3}-[0-9]{4}\z/}
+
 
   # ====================自分がフォローしているユーザーとの関連 ===================================
   #フォローする側のUserから見て、フォローされる側のUserを(中間テーブルを介して)集める。なので親はfollowing_id(フォローする側)

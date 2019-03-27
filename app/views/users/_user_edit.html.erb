@@ -1,80 +1,90 @@
-<div class="modal fade" id="modal-option" tabindex="-1" role="dialog" aria-labelledby="myModalOptionLabel">
+<div class="modal fade" id="modal4-option" tabindex="-1" role="dialog" aria-labelledby="myModalOptionLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="myModalOptionLabel">ユーザー編集</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="閉じる"><span aria-hidden="true">&times;</span></button>
       </div>
+
       <div class="modal-body">
-        <%= form_for(user) do |f|%>
-          <div>
-            <%= f.label :lastname %><br/>
-            <%= f.text_field :lastname, autofocus: true, autocomplete: "lastname" %>
-          </div>
+        <div class="edit_user_form">
+          <%= form_for(user) do |f|%>
+            <div class="registration_name">
+              <div class="field">
+                <%= f.label :名字 %><br />
+                <%= f.text_field :lastname, autofocus: true, autocomplete: "lastname" %>
+              </div>
 
-          <div>
-            <%= f.label :firstname %><br/>
-            <%= f.text_field :firstname, autofocus: true, autocomplete: "firstname" %>
-          </div>
+              <div class="field">
+                <%= f.label :名前 %><br />
+                <%= f.text_field :firstname, autofocus: true, autocomplete: "firstname" %>
+              </div>
+            </div>
+            <div class="registration_namekana">
+              <div class="field">
+                <%= f.label :みょうじ %><br />
+                <%= f.text_field :lastname_kana, autofocus: true, autocomplete: "lastname_kana" %>
+              </div>
 
-          <div>
-            <%= f.label :lastname_kana %><br/>
-            <%= f.text_field :lastname_kana, autofocus: true, autocomplete: "lastname_kana" %>
-          </div>
+              <div class="field">
+                <%= f.label :なまえ %><br />
+                <%= f.text_field :firstname_kana, autofocus: true, autocomplete: "firstname_kana" %>
+              </div>
+            </div>
 
-          <div>
-            <%= f.label :firstname_kana %><br/>
-            <%= f.text_field :firstname_kana, autofocus: true, autocomplete: "firstname_kana" %>
-          </div>
+            <div class="field">
+              <%= f.label :ニックネーム %><br />
+              <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" ,class:"form-control"%>
+            </div>
+            <div class="form_address_introduction">
+              <div class="address">
+                <div class="field">
+                  <%= f.label :郵便番号 %><br />
+                  <%= f.text_field :postal, autofocus: true, autocomplete: "postal" %>
+                </div>
 
-          <div>
-            <%= f.label :nickname %><br/>
-            <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
-          </div>
+                <div class="field">
+                  <%= f.label :住所 %><br />
+                  <%= f.text_area :address, autofocus: true, autocomplete: "address",:size => "20x2" %>
+                </div>
+              </div>
+              <div class="field">
+                <%= f.label :紹介文 %><br />
+                <%= f.text_area :introduction, autofocus: true, autocomplete: "introduction",:size => "25x5" %>
+              </div>
+            </div>
 
-          <div>
-            <%= f.label :postal %><br/>
-            <%= f.text_field :postal, autofocus: true, autocomplete: "postal" %>
-          </div>
+            <div class="field">
+              <%= f.label :メール %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"form-control" %>
+            </div>
 
-          <div>
-            <%= f.label :address %><br/>
-            <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
-          </div>
+            <div class="field">
+              <%= f.label :パスワード %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "new-password",class:"form-control" %>
+            </div>
 
-          <div>
-            <%= f.label :email %><br/>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-          </div>
+            <div class="field">
+              <%= f.label :"パスワード(確認用)" %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password",class:"form-control" %>
+            </div>
 
-          <div>
-            <%= f.label :introduction %><br/>
-            <%= f.text_area :introduction, autofocus: true, autocomplete: "introduction" %>
-          </div>
+                    <div class="user_image">
+                      <%= f.label :user_image, "ユーザー画像", class:"label-bold" %><br />
+                      <%= f.file_field :user_image, multipart: true %>
+                    </div>
+            <div class="submit_btn actions">
+              <%= f.submit "登録する",class:"btn btn-primary form-control" %>
+            </div>
+          <% end %>
+        </div>
 
-          <div>
-            <%= f.label :password %>
-            <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <% end %><br/>
-            <%= f.password_field :password, autocomplete: "new-password" %>
-          </div>
-
-          <div>
-            <%= f.label :password_confirmation %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-          </div>
-
-          <div class="user_image">
-            <%= f.label :user_image, "ユーザー画像", class:"label-bold" %><br />
-            <%= f.file_field :user_image, multipart: true %>
-          </div>
-          <%= f.submit%>
-
-        <% end %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+        </div>
       </div>
     </div>
   </div>
