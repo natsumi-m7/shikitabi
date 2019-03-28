@@ -1,8 +1,8 @@
 class SpotsController < ApplicationController
   def top
     @spots = Spot.all
-    @spot1 = Spot.find(10)
-    @spot2 = Spot.find(11)
+    # @spot1 = Spot.find(10)
+    # @spot2 = Spot.find(11)
 
   end
 
