@@ -3,7 +3,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="myModalOptionLabel">コメント投稿</h5>
+        <h3 class="modal-title" id="myModalOptionLabel">コメント投稿</h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="閉じる"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
@@ -11,13 +11,14 @@
           <%= form_for [@spot,@comment] do |comment| %>
             <%= comment.hidden_field :spot_id, value: @spot.id %>
             <div class="field" id="star">
-                <%= comment.label :star %>
+                <%= comment.label :評価 %>
                 <%= comment.hidden_field :star, id: :review_star %>
+                ※５段階で評価をつけてください。
             </div>
             <%= comment.file_field :comment_image, multipart: true %>
-            <label><%= comment.label :comment %></label>
-            <%= comment.text_area :comment, :size => "43x10" %><br>
-            <%= comment.submit "レビュー評価", :class => "btn btn-primary" %>
+            <label><%= comment.label :comment %></label><br>
+            <%= comment.text_area :comment, :size => "50x5" %><br>
+            <%= comment.submit "レビューを投稿する", :class => "btn btn-primary form-control" %>
           <% end %>
           <script>
           $('#star').raty({

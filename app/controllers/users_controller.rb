@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :admin_validate!, only: [:index]
+  before_action :correct_user, only: [:show]
+  before_action :create_user, only: [:update]
   def index
     @spots = Spot.page(params[:spot_page]).per(6)
     @users = User.page(params[:user_page]).per(8)
@@ -18,16 +21,6 @@ class UsersController < ApplicationController
   def followers
     user = User.find(params[:id])
     @user_followers = user.followers111
-  end
-
-  def new
-  end
-
-  def edit
-    @user = current_user
-  end
-
-  def create
   end
 
   def update
@@ -51,6 +44,25 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:lastname,:firstname,:lastname_kana,:firstname_kana,:nickname,:postal,:address,:user_image,:email,:password,:password_confirmation,:user_image,:introduction)
+  end
+  def admin_validate!
+    if user_signed_in? && current_user.admin?
+    else
+      redirect_to root_path
+    end
+  end
+  def correct_user
+    if user_signed_in?
+    else
+      redirect_to root_path
+    end
+  end
+  def create_user
+    user = User.find(params[:id])
+    if user_signed_in? && current_user = user
+    else
+      redirect_to root_path
+    end
   end
 
 end

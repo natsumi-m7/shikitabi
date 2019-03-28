@@ -11,6 +11,7 @@ $padding: 12px;
     display:flex;
     height:600px;
     margin:0 auto;
+    z-index: 1;
 }
 .new_session_form{
     width:350px;
@@ -27,10 +28,11 @@ $padding: 12px;
 }
 .new_registration{
     width:780px;
-    padding-top:160px;
+    padding-top:130px;
     display:flex;
-    height:900px;
+    height:980px;
     margin:0 auto;
+    z-index: 1;
 }
 .new_registration_form{
     width:500px;

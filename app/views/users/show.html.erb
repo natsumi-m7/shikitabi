@@ -13,7 +13,7 @@
                         <p><%=link_to "このユーザーをフォローする", user_relations_path(@user.id), method: :post ,class: "btn btn-default"%></p>
                     <% end %>
                 <% else %>
-                    <button type="button" data-toggle="modal" data-backdrop="true" data-target="#modal-option" class="btn btn-default user_edit">ユーザー情報を編集する</button>
+                    <button type="button" data-toggle="modal" data-backdrop="true" data-target="#modal4-option" class="btn btn-default user_edit">ユーザー情報を編集する</button>
                     <%= render 'users/user_edit',user: @user %>
                 <% end %>
             </div>

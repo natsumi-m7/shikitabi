@@ -18,47 +18,46 @@
 
 	<div class="admin_spots">
 		<% @users.each do |user| %>
-		<div class="admin_user_item">
-			<div class="admin_user_image">
-				<div class="admin_user_image_photo">
-					<%= link_to image_tag(user.user_image.url,class: "admin_user_photo"),user_path(user.id)%>
+			<div class="admin_user_item">
+				<div class="admin_user_image">
+					<div class="admin_user_image_photo">
+						<%= link_to image_tag(user.user_image.url,class: "admin_user_photo"),user_path(user.id)%>
+					</div>
+					<div class="edit_destroy">
+						<button type="button" data-toggle="modal" data-backdrop="true" data-target="#modal4-option" class="btn btn-default btn-sm user_edit">編集</button>
+						<%= render 'users/user_edit',user: user%>
+						<%=link_to "削除", user_path(user.id),method: :delete,class: "btn btn-default btn-sm" %>
+					</div>
 				</div>
-				<div class="edit_destroy">
-					<button type="button" data-toggle="modal" data-backdrop="true" data-target="#modal-option" class="btn btn-default btn-sm user_edit">編集</button>
-					<%= render 'users/user_edit',user: user%>
-					<%=link_to "削除", user_path(user.id),method: :delete,class: "btn btn-default btn-sm" %>
+				<div class="admin_user_name">
+					<div class="user_lastname_firstname">
+						<%= user.lastname %> <%= user.firstname %>
+					</div>
+					<div class="admin_user_namekana">
+						<%= user.lastname_kana %> <%= user.firstname_kana %>
+					</div>
 				</div>
+				<div class="admin_user_nickname">
+					<%= user.nickname %>
+				</div>
+				<div class="admin_user_address">
+					<div class="admin_address_postal">
+						<%= user.postal %>
+					</div>
+					<div class="admin_address_address">
+						<%= user.address %>
+					</div>
+				</div>
+				<div class="admin_user_email">
+					<%= user.email %>
+			  	</div>
+			  	<div class="admin_user_introduction">
+			  		<%= user.introduction %>
+			  	</div>
+			  	<div class="admin_user_created_at">
+			  		<%= user.created_at.strftime("%Y-%m-%d") %>
+			  	</div>
 			</div>
-			<div class="admin_user_name">
-				<div class="user_lastname_firstname">
-					<%= user.lastname %> <%= user.firstname %>
-				</div>
-				<div class="admin_user_namekana">
-					<%= user.lastname_kana %> <%= user.firstname_kana %>
-				</div>
-			</div>
-			<div class="admin_user_nickname">
-				<%= user.nickname %>
-			</div>
-			<div class="admin_user_address">
-				<div class="admin_address_postal">
-					<%= user.postal %>
-				</div>
-				<div class="admin_address_address">
-					<%= user.address %>
-				</div>
-			</div>
-			<div class="admin_user_email">
-				<%= user.email %>
-		  	</div>
-		  	<div class="admin_user_introduction">
-		  		<%= user.introduction %>
-		  	</div>
-		  	<div class="admin_user_created_at">
-		  		<%= user.created_at.strftime("%Y-%m-%d") %>
-		  	</div>
-		</div>
-
 		<% end %>
 	</div>
 </div>

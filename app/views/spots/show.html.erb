@@ -1,9 +1,9 @@
 <%= render 'spots/header' %>
 <div class="show">
     <div class="show_top">
-        <div class="show_top_left">
-          <%= image_tag @spot.images.url, class: "spot_image"%>
-        </div>
+      <div class="show_top_left">
+        <%= image_tag @spot.images.url, class: "spot_image"%>
+      </div>
       <div class="show_top_right">
         <h3><%= @spot.spot_name %></h3>
       </div>
@@ -20,11 +20,11 @@
           </div>
           <% if user_signed_in? %>
             <div class="new_comments">
-              <button type="button" data-toggle="modal" data-backdrop="true" data-target="#modal-option" class="btn btn-default">コメントを投稿する</button>
+              <button type="button" data-toggle="modal" data-backdrop="true" data-target="#modal-option" class="btn btn-default">レビューを投稿する</button>
             </div>
           <% end %>
         </div>
-          <%= render 'spots/new_comment' %>
+        <%= render 'spots/new_comment' %>
         <!-- コメント一覧表示 -->
         <div class="comment_list">
           <% @comments.each do |comment| %>
