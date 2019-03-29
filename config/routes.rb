@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   end
   resources :relationships,only: [:create, :destroy]
   resources :spots,except:[:new] do
-      resources :comments,only:[:create,:destroy]
+      resources :comments,only:[:create,:destroy,:edit,:update]
       resource :favorites,only:[:create,:destroy]
       resources :went_spots,only:[:create,:destroy]
   end

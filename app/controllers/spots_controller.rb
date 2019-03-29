@@ -16,11 +16,6 @@ class SpotsController < ApplicationController
     @comments = @spot.comments.all.order(created_at: :desc)
   end
 
-  # GET /spots/new
-  def new
-    @spot = Spot.new
-  end
-
   # GET /spots/1/edit
   def edit
     @spot = Spot.find(params[:id])
@@ -31,16 +26,16 @@ class SpotsController < ApplicationController
     @spot = Spot.new(spot_params)
 
     if @spot.save
-      redirect_to spots_new_path, notice: 'Spot was successfully created.'
-    else
-      render :new
+      flash[:success] = "スポットを追加しました。"
     end
+      redirect_to users_path
   end
 
   # PATCH/PUT /spots/1
   def update
     spot = Spot.find(params[:id])
     if spot.update(spot_params)
+      flash[:success] = "スポットを編集しました。"
       redirect_to users_path
     end
   end

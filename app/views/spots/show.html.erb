@@ -31,7 +31,13 @@
             <div class="comment_content">
               <%= image_tag comment.comment_image.url, class: "comment_image"%>
               <!-- 評価された星を表示する記述 -->
-              <div class="rated" data-score="<%= comment.star %>"></div>
+              <div class="rated_edit">
+                <div class="rated" data-score="<%= comment.star %>"></div>
+                <% if user_signed_in? && current_user.id == comment.user_id %>
+                  <%= render 'spots/edit_comment', comment: comment %>
+                  <%=link_to "削除", spot_comment_path(comment.spot_id,comment.id),method: :delete,class: "btn btn-default btn-sm", data:{ confirm: "本当に削除してよろしいですか？",cancel: "やめる",commit: "削除する"},title: "削除の確認" %>
+                <% end %>
+              </div>
               <div class="comment_comment">
                 <%= comment.comment %><br>
               </div>
@@ -84,3 +90,11 @@
     }
   });
 </script>
+
+<% flash.each do |type, msg| %>
+  <% type = 'info' if type == 'notice' %>
+  <% type = 'error' if type == 'alert' %>
+  <script>
+    toastr['<%= type %>']('<%= msg %>');
+  </script>
+<% end %>

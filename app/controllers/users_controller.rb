@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   def index
     @spots = Spot.page(params[:spot_page]).per(6)
     @users = User.page(params[:user_page]).per(8)
+    @spot = Spot.new
   end
 
   def show
@@ -22,16 +23,18 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     @user_followers = user.followers111
   end
+  def edit
+
+  end
 
   def update
     @user = current_user
     if @user.update(user_params)
+      flash[:success] = "ユーザー情報を編集しました。"
       sign_in(@user, bypass: true) if current_user.id == @user.id
       #　パスワードを編集すると、deviseの特性上自動的にログアウトしてしまうので、それを防ぐ為の記述。
-      redirect_to user_path(@user.id)
-    else
-      render :edit
     end
+    redirect_to user_path(@user.id)
 
   end
 

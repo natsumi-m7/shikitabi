@@ -1,0 +1,40 @@
+<button type="button" data-toggle="modal" data-backdrop="true" data-target="#modal-option" class="btn btn-default btn-sm user_edit">編集</button>
+
+<div class="modal fade" id="modal-option" tabindex="-1" role="dialog" aria-labelledby="myModalOptionLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="myModalOptionLabel">コメントの編集</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="閉じる"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <div class="comment_post">
+          <%#= form_for [@spot,comment] do |comment| %>
+          <%= form_for [@spot,comment] do |comment| %>
+            <%= comment.hidden_field :spot_id, value: @spot.id %>
+            <div class="field" id="star">
+                <%= comment.label :評価 %>
+                <%= comment.hidden_field :star, id: :review_star %>
+                ※５段階で評価をつけてください。
+            </div>
+            <%= comment.file_field :comment_image, multipart: true %>
+            <label><%= comment.label :comment %></label><br>
+            <%= comment.text_area :comment, :size => "50x5" %><br>
+            <%= comment.submit "レビューを投稿する", :class => "btn btn-primary form-control" %>
+          <% end %>
+          <script>
+          $('#star').raty({
+            size:36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            scoreName: 'comment[star]'
+          });
+          </script>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+      </div>
+    </div>
+  </div>
+</div>

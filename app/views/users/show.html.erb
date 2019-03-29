@@ -1,5 +1,4 @@
 <%= render 'spots/header' %>
-
 <div class="mypage_container ">
     <div class="mypage_left">
         <div class="user_profile">
@@ -65,4 +64,10 @@
         </div>
     </div>
 </div>
-
+<% flash.each do |type, msg| %>
+  <% type = 'info' if type == 'notice' %>
+  <% type = 'error' if type == 'alert' %>
+  <script>
+    toastr['<%= type %>']('<%= msg %>');
+  </script>
+<% end %>

@@ -21,6 +21,8 @@
 //= require bootstrap-sprockets
 //= require underscore
 //= require gmaps/google
+// = require data-confirm-modal
+//= require toastr
 /*!
  * jQuery Raty - A Star Rating Plugin
  *
