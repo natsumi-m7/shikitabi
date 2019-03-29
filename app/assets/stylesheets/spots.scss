@@ -108,6 +108,11 @@
   display: none;
   z-index: 1000;
 }
+.spring_b{
+  width:100px;
+  height:100px;
+  background-color: white;
+}
 
 #sp-menu li{
   text-align: center;
@@ -353,6 +358,10 @@
 }
 .rated{
   margin-bottom:10px;
+}
+.rated_edit{
+  display:flex;
+  justify-content:space-between;
 }
 .show_bottom_right{
   width:35%;
