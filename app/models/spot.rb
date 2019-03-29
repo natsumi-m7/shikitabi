@@ -4,6 +4,9 @@ class Spot < ApplicationRecord
 	has_many :went_spots,dependent: :destroy
     # carrierWaveを使う為の記述
 	mount_uploader :images, ImagesUploader
+    validates :spot_name,presence: true,length: {maximum:20}
+    validates :description,presence: true,length: {minimum:10,maximum:180}
+    validates :season,:prefecture,:spot_address,:images,presence: true
     # geocorderでアドレスから緯度経度を取得する為の記述
     geocoded_by :spot_address
     after_validation :geocode

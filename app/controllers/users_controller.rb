@@ -28,13 +28,20 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = current_user
+    @user = User.find(params[:id])
+    @user_followers = @user.followers
+    @user_followings = @user.followings
+    @comments = @user.comments.page(params[:page])
+    @favorites = current_user.favorite_spots.order(id: "desc")
     if @user.update(user_params)
       flash[:success] = "ユーザー情報を編集しました。"
       sign_in(@user, bypass: true) if current_user.id == @user.id
       #　パスワードを編集すると、deviseの特性上自動的にログアウトしてしまうので、それを防ぐ為の記述。
+      redirect_to user_path(@user.id)
+    else
+      flash[:alert] = "ユーザー情報の編集に失敗しました。"
+      render "show"
     end
-    redirect_to user_path(@user.id)
 
   end
 

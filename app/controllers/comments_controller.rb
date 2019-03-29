@@ -5,16 +5,24 @@ class CommentsController < ApplicationController
 
 
   def create
+    # 以下spots/showをrenderしている為の記述
+    @spot = Spot.find(params[:spot_id])
+    @comment = Comment.new
+    @comments = @spot.comments.all.order(created_at: :desc)
+    # ここまで
     spot = Spot.find(params[:spot_id])
   	comment = current_user.comments.new(comment_params)
   	comment.spot_id = spot.id
     # 以下コメントがセーブされた際にspotのaverage_starも保存される記述
   	if comment.save
         spot.average_star = spot.comments.sum(:star).to_f / spot.comments.count
-        flash[:success] = "コメントを投稿しました"
+        flash[:notice] = "コメントを投稿しました。"
         spot.save
+        redirect_to spot_path(spot.id)
+    else
+       flash[:alert] = "コメントの投稿に失敗しました。"
+       render "spots/show"
     end
-  	redirect_to spot_path(spot.id)
   end
 
   def edit

@@ -24,19 +24,29 @@ class SpotsController < ApplicationController
   # POST /spots
   def create
     @spot = Spot.new(spot_params)
+    @spots = Spot.page(params[:spot_page]).per(6)
+    @users = User.page(params[:user_page]).per(8)
 
     if @spot.save
-      flash[:success] = "スポットを追加しました。"
-    end
+      flash[:notice] = "スポットを追加しました。"
       redirect_to users_path
+    else
+      flash[:alert] = "スポットの追加に失敗しました。"
+      render "users/index"
+    end
   end
 
   # PATCH/PUT /spots/1
   def update
-    spot = Spot.find(params[:id])
-    if spot.update(spot_params)
-      flash[:success] = "スポットを編集しました。"
+    @spot = Spot.find(params[:id])
+    @spots = Spot.page(params[:spot_page]).per(6)
+    @users = User.page(params[:user_page]).per(8)
+    if @spot.update(spot_params)
+      flash[:notice] = "スポットを編集しました。"
       redirect_to users_path
+    else
+      flash[:alert] = "スポットの編集に失敗しました。"
+      render "users/index"
     end
   end
 
