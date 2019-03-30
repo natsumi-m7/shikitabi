@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
     # 以下コメントがセーブされた際にspotのaverage_starも保存される記述
   	if comment.save
         spot.average_star = spot.comments.sum(:star).to_f / spot.comments.count
-        flash[:notice] = "コメントを投稿しました。"
+        flash[:success] = "コメントを投稿しました。"
         spot.save
         redirect_to spot_path(spot.id)
     else
@@ -30,10 +30,17 @@ class CommentsController < ApplicationController
   end
 
   def update
-    binding.pry
     spot = Spot.find(params[:spot_id])
     comment = Comment.find(params[:id])
-    comment.update(comment_params)
+    if comment.update(comment_params)
+        spot.average_star = spot.comments.sum(:star).to_f / spot.comments.count
+        flash[:success] = "コメントを編集しました。"
+        spot.save
+        redirect_to spot_path(spot.id)
+    else
+       flash[:alert] = "コメントの編集に失敗しました。"
+       render "spots/show"
+    end
     redirect_to spot_path(spot.id)
 
   end

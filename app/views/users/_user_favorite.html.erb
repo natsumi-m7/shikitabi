@@ -7,13 +7,12 @@
 	          		<%= image_tag spot.images.url, class: "favorite_spot_image"%>
 	          	</div>
 	          	<div class="favorite_center">
-		          評価：
+		          平均評価：
 		          <div class="score2">
 		            <% if spot.average_star.present? %>
 		              　<%= spot.average_star.round(1) %> / 5.0
 		            <% end %>
 		          </div>
-		          <div class="rated rated2" data-score="<%= spot.average_star %>"></div>
 		        </div>
 	            <div class="favorite_bottom">
 	          	  <% if spot.favorited_by?(current_user) %>

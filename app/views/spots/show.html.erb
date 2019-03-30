@@ -13,6 +13,14 @@
       <div class="show_bottom_left">
         <div class="review">
           <h3 class="show_title">レビュー一覧</h3>
+                  <% if @comment.errors.any? %>
+            <div class="errors">
+                <h5><%= @comment.errors.count %>件のエラーが発生しました。</h5>
+                <% @comment.errors.full_messages.each do |message| %>
+                    <p><%= message %></p>
+                <% end %>
+            </div>
+        <% end %>
           <div class="score">
             <% if @spot.average_star.present? %>
               　<h4>このスポットの評価：<%= @spot.average_star.round(1) %> / 5.0</h4>
@@ -33,7 +41,8 @@
               <!-- 評価された星を表示する記述 -->
               <div class="rated_edit">
                 <div class="rated" data-score="<%= comment.star %>"></div>
-                <% if user_signed_in? && current_user.id == comment.user_id %>
+                <% if user_signed_in? && (current_user.id == comment.user_id || current_user.admin?) %>
+                <!-- 投稿したユーザーと、管理者だけが投稿を削除できる -->
                   <%= render 'spots/edit_comment', comment: comment %>
                   <%=link_to "削除", spot_comment_path(comment.spot_id,comment.id),method: :delete,class: "btn btn-default btn-sm", data:{ confirm: "本当に削除してよろしいですか？",cancel: "やめる",commit: "削除する"},title: "削除の確認" %>
                 <% end %>
