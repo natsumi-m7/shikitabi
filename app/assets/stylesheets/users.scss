@@ -64,9 +64,9 @@
 // ▼フォロータブの記述▼
 .following{
 	width:100%;
-	padding:30px 20px;
+	padding:30px 0;
 	display:flex;
-	justify-content: space-between;
+	// justify-content: space-between;
   	flex-wrap: wrap;
 	background-color: white;
 }
@@ -76,10 +76,10 @@
 	border-radius: 40px;
 }
 .follow_user{
-	width:48%;
+	width:46%;
 	border:1px solid #DCD4D4;
 	display:flex;
-	margin:10px 0;
+	margin:10px 1%;
 	padding:10px;
 }
 .follow_user_left{
@@ -92,6 +92,7 @@
 	float:right;
 }
 .follow_user_introduction{
+	width:100%;
 	margin-top:5px;
 	padding:5px;
 	border-top:1px solid #DCD4D4;
@@ -107,14 +108,15 @@
 	width:100%;
 	height:730px;
 	display:flex;
-	justify-content: space-between;
+	// justify-content: space-between;
   	flex-wrap: wrap;
-  	align-content: space-between;
+  	// align-content: space-between;
 }
 .favorite{
 	width:30%;
+	margin:10px 1.6%;
 	border:1px solid #DCD4D4;
-	padding:10px;
+	padding:15px;
 }
 .favorite_spot_image{
 	width:100%;
@@ -171,7 +173,7 @@
 .admin_spot_item{
 	display:flex;
 	width:100%;
-	height:150px;
+	height:160px;
 	border-bottom:1px solid #D7D2D2;
 }
 .spot_image_btn{
@@ -192,10 +194,10 @@
 	line-height:150px;
 }
 .spot_prefecture_address{
-	width:25%;
+	width:20%;
 }
 .spot_description{
-	width:40%;
+	width:45%;
 	padding:3px;
 	border-right:1px solid #D7D2D2;
 	border-left:1px solid #D7D2D2;

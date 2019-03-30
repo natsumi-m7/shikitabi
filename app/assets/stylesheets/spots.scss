@@ -320,6 +320,7 @@
   padding:0 10px;
 }
 .review{
+  width:100%;
   display:flex;
   padding:10px 10px;
   justify-content: space-between;
@@ -333,14 +334,13 @@
   padding-left:20px;
 }
 .new_comments{
-  padding-top: 17px;
-  padding-left:280px;
+  float:right;
+  padding-top: 18px;
 }
 .comment_list{
   width:100%;
-  height:900px;
   display:flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   flex-wrap: wrap;
 
 }
@@ -349,7 +349,7 @@
   height:430px;
   padding:15px;
   border:1px solid #DCD4D4;
-  margin-bottom: 20px;
+  margin:20px 1.6%;
 }
 .comment_image{
   width:100%;

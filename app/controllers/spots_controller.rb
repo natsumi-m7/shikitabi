@@ -28,7 +28,7 @@ class SpotsController < ApplicationController
     @users = User.page(params[:user_page]).per(8)
 
     if @spot.save
-      flash[:notice] = "スポットを追加しました。"
+      flash[:success] = "スポットを追加しました。"
       redirect_to users_path
     else
       flash[:alert] = "スポットの追加に失敗しました。"
@@ -42,7 +42,7 @@ class SpotsController < ApplicationController
     @spots = Spot.page(params[:spot_page]).per(6)
     @users = User.page(params[:user_page]).per(8)
     if @spot.update(spot_params)
-      flash[:notice] = "スポットを編集しました。"
+      flash[:success] = "スポットを編集しました。"
       redirect_to users_path
     else
       flash[:alert] = "スポットの編集に失敗しました。"

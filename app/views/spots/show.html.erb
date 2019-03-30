@@ -33,7 +33,8 @@
               <!-- 評価された星を表示する記述 -->
               <div class="rated_edit">
                 <div class="rated" data-score="<%= comment.star %>"></div>
-                <% if user_signed_in? && current_user.id == comment.user_id %>
+                <% if user_signed_in? && (current_user.id == comment.user_id || current_user.admin?) %>
+                <!-- 投稿したユーザーと、管理者だけが投稿を削除できる -->
                   <%= render 'spots/edit_comment', comment: comment %>
                   <%=link_to "削除", spot_comment_path(comment.spot_id,comment.id),method: :delete,class: "btn btn-default btn-sm", data:{ confirm: "本当に削除してよろしいですか？",cancel: "やめる",commit: "削除する"},title: "削除の確認" %>
                 <% end %>
