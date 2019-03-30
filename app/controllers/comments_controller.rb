@@ -32,7 +32,15 @@ class CommentsController < ApplicationController
   def update
     spot = Spot.find(params[:spot_id])
     comment = Comment.find(params[:id])
-    comment.update(comment_params)
+    if comment.update(comment_params)
+        spot.average_star = spot.comments.sum(:star).to_f / spot.comments.count
+        flash[:success] = "コメントを編集しました。"
+        spot.save
+        redirect_to spot_path(spot.id)
+    else
+       flash[:alert] = "コメントの編集に失敗しました。"
+       render "spots/show"
+    end
     redirect_to spot_path(spot.id)
 
   end

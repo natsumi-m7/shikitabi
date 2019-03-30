@@ -75,9 +75,19 @@
 				</div>
 				<div class="spot_bottom">
 					<%= spot.spot_name %>
+					<div class="season_spot_rated">平均評価<div class="rated" data-score="<%= spot.average_star %>"></div></div>
 				</div>
 			</div>
 		<% end %>
 	</div>
 </div>
-
+<!-- 評価された星を表示する記述 -->
+<script>
+  $('.rated').raty({
+    path: '/images/',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+</script>
