@@ -17,7 +17,7 @@
                 <div class="spot_search">
                     <%= search_form_for @search, url: users_path do |f| %>
                         <div class="form-group">
-                            <%= f.text_field :spot_name_cont,:size=>"40" %>
+                            <%= f.text_field :spot_name_cont,:size=>"40",placeholder: "スポット名で検索" %>
                             <%=f.submit "検索する",class: "btn btn-primary btn-sm" %>
                         </div>
                     <% end %>
@@ -28,7 +28,7 @@
                 <div class="spot_search">
                     <%= search_form_for @search_user, url: users_path do |f| %>
                         <div class="form-group">
-                            <%= f.text_field :lastname_cont,:size=>"40" %>
+                            <%= f.text_field :lastname_cont,:size=>"40",placeholder: "ユーザー名で検索" %>
                             <%=f.submit "検索する",class: "btn btn-primary btn-sm" %>
                         </div>
                     <% end %>

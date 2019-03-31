@@ -3,7 +3,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title" id="myModalOptionLabel">コメント投稿</h3>
+        <h3 class="modal-title" id="myModalOptionLabel">レビュー投稿</h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="閉じる"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
@@ -17,7 +17,7 @@
             </div>
             <%= comment.file_field :comment_image %>
             <label><%= comment.label :comment %></label><br>
-            <%= comment.text_area :comment, :size => "50x5" %><br>
+            <%= comment.text_area :comment, :size => "50x5",placeholder: "４文字以上９０文字以内で投稿してください。" %><br>
             <%= comment.submit "レビューを投稿する", :class => "btn btn-primary form-control" %>
           <% end %>
           <script>
