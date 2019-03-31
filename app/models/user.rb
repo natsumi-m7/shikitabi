@@ -10,7 +10,7 @@ class User < ApplicationRecord
 		mount_uploader :user_image, UserImageUploader
     has_many :favorite_spots, through: :favorites, source: :spot
     #validates :introduciton,presence: true,length: {maximum:65}
-    validates :nickname,presence: true,uniqueness: true,length: {minimum:4,maximum:8}
+    validates :nickname,presence: true,uniqueness: true,length: {minimum:2,maximum:8}
     validates :postal, format: {with: /\A[0-9]{3}-[0-9]{4}\z/}
 
 
