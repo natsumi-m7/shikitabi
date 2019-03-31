@@ -1,10 +1,10 @@
-  <div class="shop comment_list">
+  <div class="comment_list">
     <% @comments.each do |comment| %>
       <div class="comment_content ">
         <div class="comment_spot">
           <p><%= comment.spot.spot_name %></p>
         </div>
-        <%= image_tag comment.comment_image.url, class: "comment_image"%>
+        <%= link_to (image_tag comment.comment_image.url, class: "comment_image"),spot_path(comment.spot_id)%>
         <!-- 評価された星を表示する記述 -->
         <div class="rated" data-score="<%= comment.star %>"></div>
         <!-- 評価された星を表示する記述 -->

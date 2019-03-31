@@ -20,7 +20,7 @@
 #sp-menu h3{
   text-align: center;
   margin: 50px 0;
-  color:#6E6E6E;
+  color:black;
   text-decoration: underline;
 }
 
@@ -103,7 +103,7 @@
   // position: fixed;
   top: 0;
   left: 0;
-  background-image: url("/images/makimono.png");
+  background-image: url("/images/makimono2.png");
   background-size:cover;
   color: black;
   width: 17%;
@@ -128,8 +128,8 @@
 }
 
 #sp-menu a{
-  color: #6E6E6E;
-  font-weight: bold;
+  color: black;
+  // font-weight: bold;
   font-size:17px;
   font-family: 'Noto Serif JP', serif;
 }
@@ -275,7 +275,7 @@
 .show{
   margin-top: 120px;
   width:100%;
-  padding:0 120px;
+  padding:0 120px 50px 120px;
 }
 .show_top{
   width:100%;
@@ -320,6 +320,7 @@
   border-top:4px solid #DCD4D4;
   display:flex;
   justify-content: space-between;
+  margin-bottom:90px;
 }
 .show_bottom_left{
   width:65%;

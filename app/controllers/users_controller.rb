@@ -3,8 +3,11 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:show]
   before_action :create_user, only: [:update]
   def index
-    @spots = Spot.page(params[:spot_page]).per(6)
-    @users = User.page(params[:user_page]).per(8)
+    # @spots = Spot.page(params[:spot_page]).per(6)
+    @search = Spot.ransack(params[:q])
+    @search_user = User.ransack(params[:q])
+    @spots = @search.result.page(params[:spot_page]).per(6)
+    @users = @search_user.result.page(params[:user_page]).per(8)
     @spot = Spot.new
   end
 

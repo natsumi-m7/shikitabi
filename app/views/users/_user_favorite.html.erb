@@ -4,7 +4,7 @@
 	        <div class="favorite">
 	        	<div class="favorite_top">
 	        		<p><%= spot.spot_name %></p>
-	          		<%= image_tag spot.images.url, class: "favorite_spot_image"%>
+	          		<%= link_to image_tag(spot.images.url, class: "favorite_spot_image"),spot_path(spot.id)%>
 	          	</div>
 	          	<div class="favorite_center">
 		          平均評価：

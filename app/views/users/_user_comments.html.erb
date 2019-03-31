@@ -1,14 +1,15 @@
 <div class="user_comments" id='shops'>
     <%= render partial: "show", collections:  "@comments" %>
 </div>
-<div class="page-load-status">
+<%= paginate @comments %>
+<!-- <div class="page-load-status">
   <div class="infinit-scroll-request">
-    <%= image_tag '25.gif'%>
+    <%#= image_tag '25.gif'%>
     <%= paginate @comments %>
   </div>
   <p class="infinite-scroll-last">last</p>
   <p class="infinite-scroll-error">error</p>
-</div>
+</div> -->
   <!-- 評価された星を表示する記述 -->
 <script>
   $('.rated').raty({

@@ -7,44 +7,45 @@
       </div>
 
       <div class="modal-body">
+        <span class="need">※は必須項目です。</span>
         <div class="edit_user_form">
           <%= form_for(user) do |f|%>
             <div class="registration_name">
               <div class="field">
-                <%= f.label :名字 %><br />
+                <span class="need">※</span><%= f.label :名字 %><br />
                 <%= f.text_field :lastname, autofocus: true, autocomplete: "lastname" %>
               </div>
 
               <div class="field">
-                <%= f.label :名前 %><br />
+                <span class="need">※</span><%= f.label :名前 %><br />
                 <%= f.text_field :firstname, autofocus: true, autocomplete: "firstname" %>
               </div>
             </div>
             <div class="registration_namekana">
               <div class="field">
-                <%= f.label :みょうじ %><br />
+                <span class="need">※</span><%= f.label :みょうじ %><br />
                 <%= f.text_field :lastname_kana, autofocus: true, autocomplete: "lastname_kana" %>
               </div>
 
               <div class="field">
-                <%= f.label :なまえ %><br />
+                <span class="need">※</span><%= f.label :なまえ %><br />
                 <%= f.text_field :firstname_kana, autofocus: true, autocomplete: "firstname_kana" %>
               </div>
             </div>
 
             <div class="field">
-              <%= f.label :ニックネーム %><br />
+              <span class="need">※</span><%= f.label :ニックネーム %><br />
               <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" ,class:"form-control"%>
             </div>
             <div class="form_address_introduction">
               <div class="address">
                 <div class="field">
-                  <%= f.label :郵便番号 %><br />
+                  <span class="need">※</span><%= f.label :郵便番号 %><br />
                   <%= f.text_field :postal, autofocus: true, autocomplete: "postal" %>
                 </div>
 
                 <div class="field">
-                  <%= f.label :住所 %><br />
+                  <span class="need">※</span><%= f.label :住所 %><br />
                   <%= f.text_area :address, autofocus: true, autocomplete: "address",:size => "20x2" %>
                 </div>
               </div>
@@ -55,12 +56,12 @@
             </div>
 
             <div class="field">
-              <%= f.label :メール %><br />
+              <span class="need">※</span><%= f.label :メール %><br />
               <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"form-control" %>
             </div>
 
             <div class="field">
-              <%= f.label :パスワード %>
+              <span class="need">※</span><%= f.label :パスワード %>
               <% if @minimum_password_length %>
               <em>(<%= @minimum_password_length %> characters minimum)</em>
               <% end %><br />
@@ -68,7 +69,7 @@
             </div>
 
             <div class="field">
-              <%= f.label :"パスワード(確認用)" %><br />
+              <span class="need">※</span><%= f.label :"パスワード(確認用)" %><br />
               <%= f.password_field :password_confirmation, autocomplete: "new-password",class:"form-control" %>
             </div>
 

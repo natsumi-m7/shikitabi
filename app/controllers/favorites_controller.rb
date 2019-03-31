@@ -12,7 +12,7 @@ class FavoritesController < ApplicationController
 		spot = Spot.find(params[:spot_id])
 		favorite = current_user.favorites.find_by(spot_id:spot.id)
 		if favorite.destroy
-			flash[:alert]="お気に入りを削除しました。"
+			flash[:success]="お気に入りを削除しました。"
 		end
 		redirect_to spot_path(spot)
 	end
