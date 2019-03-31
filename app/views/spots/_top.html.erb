@@ -12,6 +12,7 @@
 			<h3 class="site_discription_title">四季たびとは</h3>
 			<P>関東の観光名所を四季ごとにご紹介するサイトです。<br>
 			ご覧いただく時期に合わせて見所をご紹介致します。<br>
+			右上のメニューより、ご覧になりたい季節をお選びください。<br>
 			会員登録して頂くと、レビューの投稿やお気に入り登録、<br>またユーザーのフォロー機能等がご使用いただけます。<br>
 			会員登録は一切料金は発生致しません。<br>
 		    登録される方は右上のメニュー一覧よりご登録ください。</P>
@@ -22,35 +23,38 @@
 	</div>
 	<div class="recommendation">
 		<div class="recommendation_image">
-			<%#= image_tag @spot1.images.url, class: "recommendation_spot_image"%>
+			<%= image_tag @spot1.images.url, class: "recommendation_spot_image"%>
 		</div>
 		<div class="recommendation_content">
 			<h4 class="spot_title"><%#= @spot1.spot_name %></h4>
 			<div class="spot_address">
-				<h5><%#= @spot1.prefecture %></h5>
-				<h5><%#= @spot1.spot_address %></h5>
+				<h5><%= @spot1.prefecture %></h5>
+				<h5><%= @spot1.spot_address %></h5>
 			</div>
 			<div class="recommend_text">
-				<P>北海道厚真町には、人を育て生かす文化を持つ町役場がある。30 代の役場職員に挑戦する機会を与えてきた。若い役場職員たちは、部署横断のプロジェクトを立ち上げるなど、次々と主体的な挑戦を始めている。そして、町役場の先輩たちは、その挑戦を支え見守ってきた。そんな人づくりの文化が、町役場から染み出して、町全体に広がろうとしている。地域おこし協力隊となった若者が自立していくために、役場職員が一人一人と丁寧に向き合い支えてきたのはその一例。このような動きを拡張・加速していくために、2016 年、厚真町ローカルベンチャースクールが始まる。</P>
+				<P><%= @spot1.description %></P>
+				<!-- <P>北海道厚真町には、人を育て生かす文化を持つ町役場がある。30 代の役場職員に挑戦する機会を与えてきた。若い役場職員たちは、部署横断のプロジェクトを立ち上げるなど、次々と主体的な挑戦を始めている。そして、町役場の先輩たちは、その挑戦を支え見守ってきた。そんな人づくりの文化が、町役場から染み出して、町全体に広がろうとしている。地域おこし協力隊となった若者が自立していくために、役場職員が一人一人と丁寧に向き合い支えてきたのはその一例。このような動きを拡張・加速していくために、2016 年、厚真町ローカルベンチャースクールが始まる。</P> -->
 			</div>
-			<%#= link_to "もっと見る", spot_path(@spot1.id),class: 'btn btn-default recommend_link'%>
+			<%= link_to "もっと見る", spot_path(@spot1.id),class: 'btn btn-default recommend_link'%>
 		</div>
 	</div>
 	<div class="recommendation">
 		<div class="recommendation_content">
-			<h4 class="spot_title"><%#= @spot2.spot_name %></h4>
+			<h4 class="spot_title"><%= @spot2.spot_name %></h4>
 			<div class="spot_address">
-				<h5><%#= @spot2.prefecture %></h5>
-				<h5><%#= @spot2.spot_address %></h5>
+				<h5><%= @spot2.prefecture %></h5>
+				<h5><%= @spot2.spot_address %></h5>
 			</div>
 			<div class="recommend_text">
-				<P>北海道厚真町には、人を育て生かす文化を持つ町役場がある。30 代の役場職員に挑戦する機会を与えてきた。若い役場職員たちは、部署横断のプロジェクトを立ち上げるなど、次々と主体的な挑戦を始めている。そして、町役場の先輩たちは、その挑戦を支え見守ってきた。そんな人づくりの文化が、町役場から染み出して、町全体に広がろうとしている。地域おこし協力隊となった若者が自立していくために、役場職員が一人一人と丁寧に向き合い支えてきたのはその一例。このような動きを拡張・加速していくために、2016 年、厚真町ローカルベンチャースクールが始まる。</P>
+				<P><%= @spot2.description %></P>
+				<!-- <P>北海道厚真町には、人を育て生かす文化を持つ町役場がある。30 代の役場職員に挑戦する機会を与えてきた。若い役場職員たちは、部署横断のプロジェクトを立ち上げるなど、次々と主体的な挑戦を始めている。そして、町役場の先輩たちは、その挑戦を支え見守ってきた。そんな人づくりの文化が、町役場から染み出して、町全体に広がろうとしている。地域おこし協力隊となった若者が自立していくために、役場職員が一人一人と丁寧に向き合い支えてきたのはその一例。このような動きを拡張・加速していくために、2016 年、厚真町ローカルベンチャースクールが始まる。</P> -->
 			</div>
-			<%#= link_to "もっと見る", spot_path(@spot2.id),class: 'btn btn-default recommend_link'%>
+			<%= link_to "もっと見る", spot_path(@spot2.id),class: 'btn btn-default recommend_link'%>
 		</div>
 		<div class="recommendation_image">
-			<%#= image_tag @spot2.images.url, class: "recommendation_spot_image"%>
+			<%= image_tag @spot2.images.url, class: "recommendation_spot_image"%>
 		</div>
 	</div>
+	<%= render 'spots/footer' %>
 </div>
 

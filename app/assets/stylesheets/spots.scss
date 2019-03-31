@@ -17,9 +17,11 @@
   padding:10px 30px 0 30px;
 }
 
-#sp-menu h1{
+#sp-menu h3{
   text-align: center;
   margin: 50px 0;
+  color:#6E6E6E;
+  text-decoration: underline;
 }
 
 .box{
@@ -80,7 +82,7 @@
 .menu-trigger.active span:nth-of-type(1) {
   -webkit-transform: translateY(20px) rotate(-45deg);
   transform: translateY(20px) rotate(-45deg);
-  background-color: #fff;
+  background-color: #000;
 }
 
 .menu-trigger.active span:nth-of-type(2) {
@@ -90,7 +92,7 @@
 .menu-trigger.active span:nth-of-type(3) {
   -webkit-transform: translateY(-20px) rotate(45deg);
   transform: translateY(-20px) rotate(45deg);
-  background-color: #fff;
+  background-color: #000;
 }
 
 /* ------------------------ */
@@ -98,31 +100,38 @@
 /* ------------------------ */
 
 #sp-menu {
-  position: fixed;
+  // position: fixed;
   top: 0;
   left: 0;
-  background: #000;
-  color: #fff;
-  width: 100%;
-  min-height: 100%;
+  background-image: url("/images/makimono.png");
+  background-size:cover;
+  color: black;
+  width: 17%;
+  height: 700px;
   display: none;
   z-index: 1000;
+  float:right;
+  padding-top:80px;
 }
 .spring_b{
   width:100px;
   height:100px;
   background-color: white;
+  z-index: 1001;
 }
-
+#sp-menu ul{
+  list-style-type: none;
+}
 #sp-menu li{
   text-align: center;
   margin-bottom: 30px;
 }
 
 #sp-menu a{
-  color: #fff;
-  text-decoration: none;
+  color: #6E6E6E;
   font-weight: bold;
+  font-size:17px;
+  font-family: 'Noto Serif JP', serif;
 }
 .login{
   z-index: 1000;
@@ -435,8 +444,31 @@
   justify-content:space-between;
 }
 //▲新規投稿ページ▲
-
-
+//▼フッター▼
+.footer{
+  width:100%;
+}
+.footer_line{
+  width:100%;
+  height:90px;
+  background-image:url(/images/s_line2.png);
+  background-repeat: repeat-x;
+  // background-size: cover;
+}
+.footer_content{
+  width:100%;
+  height:90px;
+  background-image:url(/images/tuchi2.jpg);
+  background-repeat: repeat-x;
+}
+.footer_content p{
+  color:white;
+  float:right;
+  margin-top:60px;
+  margin-right:30px;
+  font-size:15px;
+}
+//▲フッター▲
 
 
 
