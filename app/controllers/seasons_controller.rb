@@ -1,7 +1,7 @@
 class SeasonsController < ApplicationController
   def spring
   	@search = Spot.ransack(params[:q])
-  	@spots = @search.result.where(season: "春").order(created_at: :desc)
+  	@spots = @search.result.where(season: "春").order(review_star: :desc)
     # @q = Spot.where(season: "春").ransack(params[:q])
     # @spots = @q.result(distinct: true)
   end

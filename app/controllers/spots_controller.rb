@@ -23,9 +23,11 @@ class SpotsController < ApplicationController
 
   # POST /spots
   def create
+    @search = Spot.ransack(params[:q])
+    @search_user = User.ransack(params[:q])
+    @spots = @search.result.page(params[:spot_page]).per(6)
+    @users = @search_user.result.page(params[:user_page]).per(8)
     @spot = Spot.new(spot_params)
-    @spots = Spot.page(params[:spot_page]).per(6)
-    @users = User.page(params[:user_page]).per(8)
 
     if @spot.save
       flash[:success] = "スポットを追加しました。"
