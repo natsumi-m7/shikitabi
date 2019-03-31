@@ -26,9 +26,8 @@
 			<%= image_tag @spot1.images.url, class: "recommendation_spot_image"%>
 		</div>
 		<div class="recommendation_content">
-			<h4 class="spot_title"><%#= @spot1.spot_name %></h4>
+			<h4 class="spot_title"><%= @spot1.spot_name %></h4>
 			<div class="spot_address">
-				<h5><%= @spot1.prefecture %></h5>
 				<h5><%= @spot1.spot_address %></h5>
 			</div>
 			<div class="recommend_text">
@@ -42,7 +41,6 @@
 		<div class="recommendation_content">
 			<h4 class="spot_title"><%= @spot2.spot_name %></h4>
 			<div class="spot_address">
-				<h5><%= @spot2.prefecture %></h5>
 				<h5><%= @spot2.spot_address %></h5>
 			</div>
 			<div class="recommend_text">
