@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
         spot.average_star = spot.comments.sum(:star).to_f / spot.comments.count
         flash[:success] = "コメントを投稿しました。"
         spot.save
-        redirect_to spot_path(spot.id)
+        redirect_to spot_path(spot_id)
     else
        flash[:alert] = "コメントの投稿に失敗しました。"
        render "spots/show"
@@ -41,7 +41,6 @@ class CommentsController < ApplicationController
        flash[:alert] = "コメントの編集に失敗しました。"
        render "spots/show"
     end
-    redirect_to spot_path(spot.id)
 
   end
 
