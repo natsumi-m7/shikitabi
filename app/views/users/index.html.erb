@@ -14,9 +14,25 @@
         <!-- タブ内容 -->
         <div class="tab-content">
             <div class="tab-pane active" id="sampleContentC">
+                <div class="spot_search">
+                    <%= search_form_for @search, url: users_path do |f| %>
+                        <div class="form-group">
+                            <%= f.text_field :spot_name_cont,:size=>"40" %>
+                            <%=f.submit "検索する",class: "btn btn-primary btn-sm" %>
+                        </div>
+                    <% end %>
+                </div>
                 <%= render 'spots/index' %>
             </div>
             <div class="tab-pane" id="sampleContentD">
+                <div class="spot_search">
+                    <%= search_form_for @search_user, url: users_path do |f| %>
+                        <div class="form-group">
+                            <%= f.text_field :lastname_cont,:size=>"40" %>
+                            <%=f.submit "検索する",class: "btn btn-primary btn-sm" %>
+                        </div>
+                    <% end %>
+                </div>
                 <%= render 'users/index' %>
             </div>
         </div>
