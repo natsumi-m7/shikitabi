@@ -1,26 +1,16 @@
-# README
+# Shikitabi
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Description:
 
-Things you may want to cover:
+This is a site to introduce the tourist spots of each season in Kanto, Japan.
 
-* Ruby version
+You can find tourist attractions for each season.
 
-* System dependencies
+If you register as a member, you can comment and register spots you like.
 
-* Configuration
+You can also follow the user if you like .
 
-* Database creation
+##Installation
 
-* Database initialization
+[MIT](https://github.com/natsumi-m7/shikitabi.git)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# shikitabi
-# shikitabi
