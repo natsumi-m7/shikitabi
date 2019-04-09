@@ -3,11 +3,6 @@ class SpotsController < ApplicationController
     @spots = Spot.all
     @spot1 = Spot.find(3)
     @spot2 = Spot.find(4)
-
-  end
-
-  def result
-
   end
 
   def show
@@ -16,12 +11,10 @@ class SpotsController < ApplicationController
     @comments = @spot.comments.all.order(created_at: :desc)
   end
 
-  # GET /spots/1/edit
   def edit
     @spot = Spot.find(params[:id])
   end
 
-  # POST /spots
   def create
     @search = Spot.ransack(params[:q])
     @search_user = User.ransack(params[:q])
@@ -38,7 +31,6 @@ class SpotsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /spots/1
   def update
     @spot = Spot.find(params[:id])
     @spots = Spot.page(params[:spot_page]).per(6)
@@ -52,7 +44,6 @@ class SpotsController < ApplicationController
     end
   end
 
-  # DELETE /spots/1
   def destroy
     spot = Spot.find(params[:id])
     spot.destroy
@@ -60,9 +51,6 @@ class SpotsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-
-    # Only allow a trusted parameter "white list" through.
     def spot_params
       params.require(:spot).permit(:images, :spot_name, :description, :season, :prefecture, :spot_address, :latitude, :longitude, :average_star)
     end
