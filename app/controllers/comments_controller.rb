@@ -1,8 +1,4 @@
 class CommentsController < ApplicationController
-  def index
-
-  end
-
 
   def create
     # 以下spots/showをrenderしている為の記述
@@ -41,7 +37,6 @@ class CommentsController < ApplicationController
        flash[:alert] = "レビューの編集に失敗しました。"
        render "spots/show"
     end
-
   end
 
   def destroy

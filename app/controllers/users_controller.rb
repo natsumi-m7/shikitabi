@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :admin_validate!, only: [:index]
   before_action :correct_user, only: [:show]
   before_action :create_user, only: [:update]
+
   def index
     # @spots = Spot.page(params[:spot_page]).per(6)
     @search = Spot.ransack(params[:q])
@@ -26,9 +27,6 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     @user_followers = user.followers
   end
-  def edit
-
-  end
 
   def update
     @user = User.find(params[:id])
@@ -45,7 +43,6 @@ class UsersController < ApplicationController
       flash[:alert] = "ユーザー情報の編集に失敗しました。"
       render "show"
     end
-
   end
 
   def destroy
